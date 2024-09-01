@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>webcam</title>
+	<title>curve table graphs</title>
 
 	<!-- Add latest jQuery and fancyBox files -->
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>

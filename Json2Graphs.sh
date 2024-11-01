@@ -7,13 +7,20 @@
 #  convert the json data to somthing gnuplot can understand (jq -r '.curve[]| join(" ")')
 #  save the plot to svg or something.
 
+###### make some test files in the json folders
+	# OK # test if live jsonalt is same as PTS jsonalt nothing is printed
+	# OK # test if both Live json are different only jsonalt is printed
+	# OK # test if live jsonalt dosent exist and the live json is differnt print 
+	# OK # test if live jsonalt dosent exist and the live json is same no print 
+
 
 RootDir="json"
-livePatch='Live_P54'
+livePatch="${1:=PTS_27Sep24}"
 LIVEDIR="$livePatch"
-PTSDIR='PTS_27Sep24'
+PTSDIR="${2:=PTS_10OCT24}"
 CommonDIR='misc/curvetables'
-SearchName="${1:=*}"
+SearchName="${3:=*}"
+JsonaltOnly=0
 #SearchName="health_alien"
 
 MakeGraph() {
@@ -25,20 +32,21 @@ MakeGraph() {
 	echo "set title \"$(echo "$PTSJsonFile"|sed 's/_/ /g; s/\.json//')\" font \",15\" " > ./SCRIP
 	echo 'set terminal png size 1024,1024' >> ./SCRIP
 	echo "set output \"./graphs/$PTSJsonPath/$(echo "${PTSJsonFile//json/png}")\"" >> ./SCRIP
-	# echo "" >> ./SCRIP
-	# echo "" >> ./SCRIP
+	# echo "datas = system(\"cat $PTSDIR\")" >> ./SCRIP
+	# echo "print datas" >> ./SCRIP
+	# echo "set label datas at graph 1.1,0.7" >> ./SCRIP
 	# echo "plot \"./Live\" with lines, " >> ./SCRIP
 	# echo "\"./PTS\" with lines, " >> ./SCRIP
 	# echo "\"./PTS\" every 10 with labels notitle" >> ./SCRIP
-	# echo 'plot "./Live" with lines,"./PTS" with linespoint,"./PTS" using 1:2:(sprintf("%d", $2)) every 5 with labels notitle' >> ./SCRIP
-	echo 'plot "'$livePatch'" with lines,"'$PTSDIR'" with linespoint' >> ./SCRIP
+	echo 'plot "'$livePatch'" with lines,"'$PTSDIR'" with linespoint,"'$PTSDIR'" using 1:2:(sprintf("%d", $2)) every 5 with labels notitle' >> ./SCRIP
+	#echo 'plot "'$livePatch'" with lines,"'$PTSDIR'" with linespoint' >> ./SCRIP
 
 	mkdir -p "./graphs/$PTSJsonPath"
 	gnuplot -p ./SCRIP
 }
 
 # get list of json files in jsonalt dir 
-PTSDIRList=$(find ./$RootDir/$PTSDIR/$CommonDIR/jsonalt/ -iname "$SearchName.json")
+PTSDIRList=$(find "./$RootDir/$PTSDIR/$CommonDIR/jsonalt/" -iname "$SearchName.json")
 # loop through PTSDIRList
 for iPTS in $PTSDIRList; do
 	#strip the path 
@@ -46,7 +54,11 @@ for iPTS in $PTSDIRList; do
 	# echo "dirname "$iPTS"|sed s/..$RootDir.$PTSDIR.$CommonDIR.jsonalt.//"
 	PTSJsonPath=$(dirname "$iPTS"|sed s/..$RootDir.$PTSDIR.misc.curvetables.jsonalt.//)
 	# get list of files in livedir that match iPTS
-	LIVEDIRList=$(find ./$RootDir/$LIVEDIR/$CommonDIR/ -iname "$PTSJsonFile")
+	if [[ $JsonaltOnly -eq "1" ]]; then
+		LIVEDIRList=$(find "./$RootDir/$LIVEDIR/$CommonDIR/jsonalt/" -iname "$PTSJsonFile")
+	else
+		LIVEDIRList=$(find "./$RootDir/$LIVEDIR/$CommonDIR/" -iname "$PTSJsonFile")
+	fi
 
 	# if $LIVEDIRList is has more than 2 entries we will have probalems lets check for it and hope it never happens. 
 	if [[ ${#LIVEDIRList[@]} -gt 2 ]]; then
@@ -67,16 +79,18 @@ for iPTS in $PTSDIRList; do
 	fi
 
 	for jLive in $LIVEDIRList; do
-
+		Diff="0"
+		$(cmp -s "$iPTS" "$jLive") || Diff="1"
 		#cmp files 
-		if [[ ! $(cmp -s "$iPTS" "$jLive") ]]; then
-			Diff=1
-		fi
+		# if [[ $(cmp -s "$iPTS" "$jLive") -eq "1" ]]; then
+			
+		# 	Diff="1"
+		# fi
 		# We only want to create 1 graph from the files that match $iPTS and we want to prioritize the jsonalt folder
 		# so we need to check if $jLive currently contains jsonalt
 		# and if jsonalt was found at all in the list 
 		# and no reason to make the graph if there is no change.
-		if [[ $jLive == *jsonalt* && $Jsonalt -eq "1" && $Diff -eq "1" ]]; then
+		if [[ "$jLive" == *jsonalt* && $Jsonalt -eq "1" && $Diff -eq "1" ]]; then
 			MakeGraph
 		elif [[ $Jsonalt -eq "0" && $Diff -eq "1" ]]; then
 			MakeGraph

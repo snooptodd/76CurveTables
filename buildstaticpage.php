@@ -55,7 +55,7 @@ Fancybox.bind("[data-fancybox]", {
 
   <?php
 
-  $sDataPath = 'graphs';
+  $sDataPath = './graphs';
   $aGraph=[];
   $output='';
   $wrap=6;

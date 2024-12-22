@@ -23,11 +23,11 @@ import matplotlib.pyplot as plt
 DEBUG=False
 RootDir="./json"
 #livePatch="/PTS_10OCT24"
-LIVEDIR="/PTS_25OCT24"
-PTSDIR="/PTS_01NOV24"
+LIVEDIR="/Live_P55"
+PTSDIR="/PTS56_21DEC24"
 CommonDIR='/misc/curvetables'
 SearchName="*"
-JsonaltOnly=False
+JsonaltOnly=True
 SearchName="*.json"
 PTSDIRList=[]
 LIVEDIRList=[]
@@ -83,7 +83,7 @@ def makegraph():
         
     plt.plot(file1X,file1Y, label=str(PTSDIR)[1:])
     if file2.find(".json") > 0:
-        plt.plot(file2X,file2Y, label=str(LIVEDIR)[1:])
+        plt.plot(file2X,file2Y, label=str(LIVEDIR)[1:]+" "+file2.split("/")[4])
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.title(title)
@@ -130,8 +130,8 @@ for PTSfile in PTSDIRList:
         # if pts jsonalt is (i think that is it)
         
         if len(ALT_errors):
-            if len(JSON_match) or len(JSON_mismatch):
-                continue
+            # if len(JSON_match) or len(JSON_mismatch): # commenting this out because it is very improbable that it is a totaly new curevetable.
+            #     continue
             LiveFile=""
             makegraph()
         elif len(ALT_mismatch):

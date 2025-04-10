@@ -84,8 +84,10 @@ Fancybox.bind("[data-fancybox]", {
     switch (count($faNames)) {
       case 7:
         $faGraph[$faPath[1]][$faNames[0]][$faNames[1]][$faNames[2]][$faNames[3]][$faNames[4]][$faNames[5]][$faNames[6]]=$pathName;
+        break;
       case 6:
         $faGraph[$faPath[1]][$faNames[0]][$faNames[1]][$faNames[2]][$faNames[3]][$faNames[4]][$faNames[5]]=$pathName;
+        break;
       case 5:
         $faGraph[$faPath[1]][$faNames[0]][$faNames[1]][$faNames[2]][$faNames[3]][$faNames[4]]=$pathName;
         break;

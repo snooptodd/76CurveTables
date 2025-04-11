@@ -9,12 +9,11 @@
   $aGraph=[];
   $output='';
   $wrap=6;
-  $name='Curve Table Graphs';
-  $htmlheader='<!DOCTYPE html> <html lang="en"> <head> 	<meta charset="utf-8"> 	<meta name="viewport" content="width=device-width, initial-scale=1"> 	
-  <title>'.$name.'</title> </head> <body> 
-  <style>
-  div{height: auto; width: auto;}
-  </style>';
+  // $pagename='Curve Table Graphs';
+  // $htmlheader='<!DOCTYPE html> <html lang="en"> 
+  // <head> 	<meta charset="utf-8"> 	<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+  // <title>'.$pagename.'</title> 
+  // <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>';
   $htmlfooter='</body> </html>';
 
   function filesIn(string $path, string $name): \Generator
@@ -30,7 +29,12 @@
     yield from $it;
   }
   
-
+  function htmlheader(string $pagename) {
+    return '<!DOCTYPE html> <html lang="en"> 
+  <head> 	<meta charset="utf-8"> 	<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+  <title>'.$pagename.'</title> 
+  <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>';
+  }
 
   $graphs = filesIn($sDataPath,'.*\.png');
   foreach ($graphs as $gvalue) {
@@ -40,19 +44,19 @@
 
   }
   
-  $output=$htmlheader;
+  $output=htmlheader('Curve Table Graphs');
   ksort($aGraph);
   
   // Level 1
   foreach ($aGraph as $Level1Key => $Level1value) {
     //$output.='<h1>'.$Level1Key.'</h1> <table> <thead> <tr> <td> </td> </tr> </thead> <tbody>';
-    $name=$Level1Key;
+    $filename=$Level1Key;
     $subfile=str_replace('png','html',$Level1value);
-    $subdata=$htmlheader;
+    $subdata=htmlheader($filename);
     $count=1;
-    $output.='<a href="'.$subfile.'">'.$name.'</a><br>';
-    $subdata.='<img src="'.$name.'.png"><p>';
-    foreach (filesIn($pts,'.*'.$name.'\.json') as $jsonkey => $jsonvalue) {
+    $output.='<a href="'.$subfile.'">'.$filename.'</a><p>';
+    $subdata.='<img src="'.$filename.'.png"><p>';
+    foreach (filesIn($pts,'.*'.$filename.'\.json') as $jsonkey => $jsonvalue) {
       // key is path and file
       $jsondata=json_decode(file_get_contents($jsonkey),TRUE);
       $txtdata='';
@@ -66,7 +70,7 @@
     }
     $subdata.='<p>';
     $count=1;
-    foreach (filesIn($live,'.*'.$name.'\.json') as $jsonkey => $jsonvalue) {
+    foreach (filesIn($live,'.*'.$filename.'\.json') as $jsonkey => $jsonvalue) {
       $jsondata=json_decode(file_get_contents($jsonkey),TRUE);
       $txtdata='';
       foreach ($jsondata["curve"] as $jsondatakey => $jsondatavalue) {

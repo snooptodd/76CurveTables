@@ -19,7 +19,7 @@ DEBUG=False
 RootDir="./json"
 #livePatch="/PTS_10OCT24"
 LIVEDIR="/Live_P58"
-PTSDIR="/PTS_P60_4apr"
+PTSDIR="/PTS_P60_11apr"
 CommonDIR='/misc/curvetables'
 SearchName="*.json"
 PTSDIRList=[]
@@ -145,17 +145,11 @@ LivePath = pathlib.Path(RootDir+LIVEDIR+CommonDIR)
 LiveDIRList = list(LivePath.rglob(SearchName))
 file=""
 all=set(())
-# loop through PTSDIRList
+# loop through PTSDIRList. sets do not allow duplicates. each fiile will only be listed one time.
 # 
-# for file in PTSJsonaltDIRList: 
-#     all.add(file.name)
 for file in PTSDIRList:
     all.add(file.name)
-# for file in LiveJsonaltDIRList:
-#     all.add(file.name)
 for file in LiveDIRList:
-    # if not match any then print
-    # if file.name not in all:
     all.add(file.name)
 
 print(len(all))

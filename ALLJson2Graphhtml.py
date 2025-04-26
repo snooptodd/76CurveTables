@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 
 DEBUG=False
 ROOT_DIR="./json"
-LIVE_DIR="/Live_P58_7apr"
-PTS_DIR="/PTS_P60_11apr"
+LIVE_DIR="/Live_P59"
+PTS_DIR="/PTS_P60_25apr"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]
@@ -165,6 +165,15 @@ LiveJsonaltPath = pathlib.Path(ROOT_DIR+LIVE_DIR+COMMON_DIR+"/jsonalt")
 LiveJsonPath = pathlib.Path(ROOT_DIR+LIVE_DIR+COMMON_DIR+"/json")
 LivePath = pathlib.Path(ROOT_DIR+LIVE_DIR+COMMON_DIR)
 LiveDIRList = list(LivePath.rglob(SEARCH_NAME))
+
+# check that we found something in both dir paths.
+if len(PTSDIRList) == 0:
+    exit('PTS dir empty')
+
+if len(LiveDIRList) == 0:
+    exit('Live dir empty')
+    
+
 # loop through PTSDIRList. sets do not allow duplicates. each fiile will only be listed one time.
 # 
 for file in PTSDIRList:

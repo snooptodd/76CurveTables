@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/bin/python
 
 # ## create graphs and pages for the live and pts json files 
 
@@ -12,6 +12,7 @@
 import os
 import pathlib
 import json
+import filecmp
 import matplotlib.pyplot as plt
 
 DEBUG=False
@@ -29,6 +30,7 @@ if DEBUG :
     LIVE_DIR="/test_live"
     PTS_DIR="/test_pts"
 
+
 def htmlheader(pagename):
     return f'''<!DOCTYPE html> <html lang="en"> 
   <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
@@ -37,6 +39,24 @@ def htmlheader(pagename):
 
 def htmlfooter():
     return '</body> </html>'
+
+def tablestart(col1,col2,col3,col4):
+    return f'''<table>
+      <caption></caption>
+      <thead>
+        <th>{col1}</th>
+        <th>{col2}</th>
+        <th>{col3}</th>
+        <th>{col4}</th>
+      </thead>
+      <tbody>
+    '''
+
+def tablerow(col1,col2,col3,col4):
+    return f'''  <tr><td>{col1}</td><td>{col2}</td><td>{col3}</td><td>{col4}</td></tr>'''
+
+def tableend():
+    return '</tbody></table>'
 
 def writefile(nameandpath, data):
     f = open(nameandpath, "w")
@@ -147,13 +167,12 @@ def makegraph():
     plt.close()
     subpagehtml+=f'''{htmlheader(title)}
 <img src="{saveName}"><p>
-{file1subpagehtml}
-{file2subpagehtml}<br>
-{file3subpagehtml}
-{file4subpagehtml}<br>
+<table><tr><td>{file1subpagehtml}</td><td>{file2subpagehtml}</td></tr>
+<tr><td>{file3subpagehtml}</td><td>{file4subpagehtml}</td></tr></table>
 {htmlfooter()}'''
     writefile(savePath+title+'.html', subpagehtml)
-    indexhtml+=f'<a href="{savePath+title+'.html'}">{title}</a><p>'
+    # indexhtml+=f'<a href="{savePath+title+'.html'}">{title}</a><p>'
+    indexhtml+=tablerow(f'<a href="{savePath+title+'.html'}">{title}</a>',ptsnew,ptsmissing,ptschanged)
     return 
 
 
@@ -186,8 +205,28 @@ alllist = list(all)
 alllist.sort()
 print(len(all))
 indexhtml=htmlheader('Curve Table Graphs')
+indexhtml+=tablestart('Name','PTS New','PTS Missing','PTS Changed')
 
 for name in alllist:
+    # want to show on the page if a flle is changed new or removed in the pts
+    #
+    # PTSDIRList and LiveDIRList will have the full path and name of the files 
+    # so it should be possible to search them and find the full path to the file and use cmp to check difference
+    # 
+    # match = mismatch = errors = []
+    # match, mismatch, errors = filecmp.cmpfiles(PTSPath,LivePath,alllist,shallow=False)
+    # i alredy have the different files looked for and will use them to test for changes.
+
+    # PTS New is file found in PTS and not in Live
+    ## if file3 and file4 not found then PTS New
+
+    # PTS missing is file found in Live and not in PTS
+    ## if file1 and file2 not found then PTS missing
+
+    # PTS changed is file found in both and the file is changed.
+    ## if file1 and file3 are found and different then PTS changed.
+    ## or if file2 and file4 are found and differnet then PTS changed.
+
     file1 = file2 = file3 = file4 = file = ''
     for file in PTSJsonaltPath.rglob(name):
         file1 = file
@@ -197,7 +236,16 @@ for name in alllist:
         file3 = file
     for file in LiveJsonPath.rglob(name):
         file4 = file
+    if file3.exists and file4.exists:
+        ptsnew=True
+    if file1.exists and file2.exists:
+        ptsmissing=True
+    if file1.exists and file3.exists:
+        ptschanged=filecmp.cmp(file1,file3,shallow=False)
+    if file2.exists and file4.exists:
+        ptschanged=filecmp.cmp(file2,file4,shallow=False)
     makegraph()
 
+indexhtml+=tableend()
 indexhtml+=htmlfooter()
 writefile('./index.html',indexhtml)

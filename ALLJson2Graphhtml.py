@@ -228,6 +228,7 @@ for name in alllist:
     ## or if file2 and file4 are found and differnet then PTS changed.
 
     file1 = file2 = file3 = file4 = file = ''
+    ptsnew = ptsmissing = ptschanged = ''
     for file in PTSJsonaltPath.rglob(name):
         file1 = file
     for file in PTSJsonPath.rglob(name):
@@ -236,14 +237,20 @@ for name in alllist:
         file3 = file
     for file in LiveJsonPath.rglob(name):
         file4 = file
-    if file3.exists and file4.exists:
+
+    if file3!='' and file4!='':
         ptsnew=True
-    if file1.exists and file2.exists:
+
+    if file1!='' and file2!='':
         ptsmissing=True
-    if file1.exists and file3.exists:
-        ptschanged=filecmp.cmp(file1,file3,shallow=False)
-    if file2.exists and file4.exists:
-        ptschanged=filecmp.cmp(file2,file4,shallow=False)
+
+    if file1!='' and file3!='':
+        if not filecmp.cmp(file1,file3,shallow=False):
+            ptschanged=True
+
+    if file2!='' and file4!='':
+        if not filecmp.cmp(file2,file4,shallow=False):
+            ptschanged=True
     makegraph()
 
 indexhtml+=tableend()

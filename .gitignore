@@ -1,4 +1,7 @@
 /.vscode
 /json/
 /graphs.old/
-json2graphs.php
+*.php
+*.sh
+ALLJson2Graph.py
+Json2Graph.py

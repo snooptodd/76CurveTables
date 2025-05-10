@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 DEBUG=False
 ROOT_DIR="./json"
 LIVE_DIR="/Live_P59_6may"
-PTS_DIR="/PTS_P60_2may"
+PTS_DIR="/PTS_P60_9may"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]
@@ -33,15 +33,17 @@ if DEBUG :
 
 def htmlheader(pagename):
     return f'''<!DOCTYPE html> <html lang="en"> 
-  <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
-  <title>{pagename}</title> 
-  <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>'''
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>{pagename}</title> 
+<script src="sortable.min.js"></script>
+<link rel="stylesheet" href="sortable-theme-minimal.css" />
+<link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>'''
 
 def htmlfooter():
     return '</body> </html>'
 
 def tablestart(col1,col2,col3,col4):
-    return f'''<table>
+    return f'''<table data-sortable>
       <caption></caption>
       <thead>
         <th>{col1}</th>
@@ -209,13 +211,8 @@ indexhtml+=tablestart('Name','PTS New','PTS Missing','PTS Changed')
 
 for name in alllist:
     # want to show on the page if a flle is changed new or removed in the pts
-    #
-    # PTSDIRList and LiveDIRList will have the full path and name of the files 
-    # so it should be possible to search them and find the full path to the file and use cmp to check difference
     # 
-    # match = mismatch = errors = []
-    # match, mismatch, errors = filecmp.cmpfiles(PTSPath,LivePath,alllist,shallow=False)
-    # i alredy have the different files looked for and will use them to test for changes.
+    # i alredy have the different files looked up and will use them to test for changes.
 
     # PTS New is file found in PTS and not in Live
     ## if file3 and file4 not found then PTS New
@@ -238,10 +235,10 @@ for name in alllist:
     for file in LiveJsonPath.rglob(name):
         file4 = file
 
-    if file3!='' and file4!='':
+    if file3=='' and file4=='':
         ptsnew=True
 
-    if file1!='' and file2!='':
+    if file1=='' and file2=='':
         ptsmissing=True
 
     if file1!='' and file3!='':

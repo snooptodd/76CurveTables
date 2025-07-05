@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/python3
 
 # ## create graphs and pages for the live and pts json files 
 
@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 
 DEBUG=False
 ROOT_DIR="./json"
-LIVE_DIR="/Live_P59_6may"
-PTS_DIR="/PTS_P60_9may"
+LIVE_DIR="/Live_P60"
+PTS_DIR="/PTS_P62_3July"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]

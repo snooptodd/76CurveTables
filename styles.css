@@ -4,13 +4,12 @@ div {
     width: fit-content;
     height: auto; 
 }
-
 .table-container {
-            max-height: 300px;
+/*             max-height: 300px; */
             overflow-y: auto;
             border: 1px solid #ccc;
             width: 100%;
-        }
+}
 
 table {
   border-collapse: collapse;
@@ -22,14 +21,10 @@ table {
 
 thead th {
             position: sticky;
+            background-color: rgb(228 240 245);
             top: 0;
             z-index: 1;
         }
-
-thead,
-tfoot {
-  background-color: rgb(228 240 245);
-}
 
 td {
   border: 1px solid rgb(160 160 160);

@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 DEBUG=False
 ROOT_DIR="./json"
 LIVE_DIR="/Live_P60"
-PTS_DIR="/PTS_P62_3July"
+PTS_DIR="/PTS_P62_11July"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]
@@ -165,6 +165,7 @@ def makegraph():
     plt.ylabel(ylabel,rotation=0)
     plt.title(title)
     plt.legend()
+    # plt.grid(True)
     plt.savefig(savePath+saveName)
     plt.close()
     subpagehtml+=f'''{htmlheader(title)}

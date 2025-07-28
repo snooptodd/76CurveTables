@@ -9,6 +9,9 @@
 ###### make some test files in the json folders 
 # they are there "just" need to write up the test
 
+## todo
+# add commandline interface
+
 import os
 import pathlib
 import json
@@ -17,8 +20,8 @@ import matplotlib.pyplot as plt
 
 DEBUG=False
 ROOT_DIR="./json"
-LIVE_DIR="/Live_P60"
-PTS_DIR="/PTS_P62_11July"
+LIVE_DIR="/Live_P61"
+PTS_DIR="/PTS_P62_25July"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]

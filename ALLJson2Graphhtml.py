@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 DEBUG=False
 ROOT_DIR="./json"
 LIVE_DIR="/Live_P62.1"
-PTS_DIR="/PTS_P64.0_2Oct"
+PTS_DIR="/PTS_P64.01_6Oct"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]

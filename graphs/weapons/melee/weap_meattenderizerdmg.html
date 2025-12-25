@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="weap_meattenderizerdmg.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_weap_meattenderizerdmg"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 45}, {"x": 5, "y": 49}, {"x": 10, "y": 52}, {"x": 15, "y": 56}, {"x": 20, "y": 61}, {"x": 25, "y": 65}, {"x": 30, "y": 70}, {"x": 35, "y": 76}, {"x": 40, "y": 82}, {"x": 45, "y": 88}, {"x": 50, "y": 95}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 1, "y": 45}, {"x": 5, "y": 49}, {"x": 10, "y": 52}, {"x": 15, "y": 56}, {"x": 20, "y": 61}, {"x": 25, "y": 65}, {"x": 30, "y": 70}, {"x": 35, "y": 76}, {"x": 40, "y": 82}, {"x": 45, "y": 88}, {"x": 50, "y": 95}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_weap_meattenderizerdmg').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/weapons/melee/weap_meattenderizerdmg.json</label> <div class="box" id="ptsjson">x = 1, y = 45<br>x = 5, y = 49<br>x = 10, y = 52<br>x = 15, y = 56<br>x = 20, y = 61<br>x = 25, y = 65<br>x = 30, y = 70<br>x = 35, y = 76<br>x = 40, y = 82<br>x = 45, y = 88<br>x = 50, y = 95<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/weapons/melee/weap_meattenderizerdmg.json</label> <div class="box" id="Livejson">x = 1, y = 45<br>x = 5, y = 49<br>x = 10, y = 52<br>x = 15, y = 56<br>x = 20, y = 61<br>x = 25, y = 65<br>x = 30, y = 70<br>x = 35, y = 76<br>x = 40, y = 82<br>x = 45, y = 88<br>x = 50, y = 95<br></div></td></tr></table>
 </body> </html>

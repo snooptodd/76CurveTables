@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="xpd_ac_slotmachinechances_5tumbler.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_xpd_ac_slotmachinechances_5tumbler"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0, "y": 0.088657}, {"x": 1, "y": 0.440509}, {"x": 2, "y": 0.847917}, {"x": 3, "y": 0.896065}, {"x": 4, "y": 0.897917}, {"x": 5, "y": 0.898843}, {"x": 6, "y": 0.899151}, {"x": 7, "y": 0.899306}, {"x": 8, "y": 0.996065}, {"x": 9, "y": 0.997917}, {"x": 10, "y": 0.998843}, {"x": 11, "y": 0.999151}, {"x": 12, "y": 0.999306}, {"x": 13, "y": 1.0}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 0, "y": 0.088657}, {"x": 1, "y": 0.440509}, {"x": 2, "y": 0.847917}, {"x": 3, "y": 0.896065}, {"x": 4, "y": 0.897917}, {"x": 5, "y": 0.898843}, {"x": 6, "y": 0.899151}, {"x": 7, "y": 0.899306}, {"x": 8, "y": 0.996065}, {"x": 9, "y": 0.997917}, {"x": 10, "y": 0.998843}, {"x": 11, "y": 0.999151}, {"x": 12, "y": 0.999306}, {"x": 13, "y": 1.0}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_xpd_ac_slotmachinechances_5tumbler').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/misc/expeditions/xpd_ac_slotmachinechances_5tumbler.json</label> <div class="box" id="ptsjson">x = 0, y = 0.088657<br>x = 1, y = 0.440509<br>x = 2, y = 0.847917<br>x = 3, y = 0.896065<br>x = 4, y = 0.897917<br>x = 5, y = 0.898843<br>x = 6, y = 0.899151<br>x = 7, y = 0.899306<br>x = 8, y = 0.996065<br>x = 9, y = 0.997917<br>x = 10, y = 0.998843<br>x = 11, y = 0.999151<br>x = 12, y = 0.999306<br>x = 13, y = 1.0<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/misc/expeditions/xpd_ac_slotmachinechances_5tumbler.json</label> <div class="box" id="Livejson">x = 0, y = 0.088657<br>x = 1, y = 0.440509<br>x = 2, y = 0.847917<br>x = 3, y = 0.896065<br>x = 4, y = 0.897917<br>x = 5, y = 0.898843<br>x = 6, y = 0.899151<br>x = 7, y = 0.899306<br>x = 8, y = 0.996065<br>x = 9, y = 0.997917<br>x = 10, y = 0.998843<br>x = 11, y = 0.999151<br>x = 12, y = 0.999306<br>x = 13, y = 1.0<br></div></td></tr></table>
 </body> </html>

@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="health_v94_2_robot_residentialmaintenance.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_health_v94_2_robot_residentialmaintenance"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 35, "y": 225}, {"x": 40, "y": 325}, {"x": 45, "y": 490}, {"x": 50, "y": 525}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 35, "y": 225}, {"x": 40, "y": 325}, {"x": 45, "y": 490}, {"x": 50, "y": 525}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_health_v94_2_robot_residentialmaintenance').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/creatures/health/health_v94_2_robot_residentialmaintenance.json</label> <div class="box" id="ptsjson">x = 35, y = 225<br>x = 40, y = 325<br>x = 45, y = 490<br>x = 50, y = 525<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/creatures/health/health_v94_2_robot_residentialmaintenance.json</label> <div class="box" id="Livejson">x = 35, y = 225<br>x = 40, y = 325<br>x = 45, y = 490<br>x = 50, y = 525<br></div></td></tr></table>
 </body> </html>

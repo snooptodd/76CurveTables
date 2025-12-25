@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="armor_bolstering_05.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_armor_bolstering_05"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0.0, "y": 0.59}, {"x": 0.05, "y": 0.59}, {"x": 0.1, "y": 0.62}, {"x": 0.15, "y": 0.73}, {"x": 0.25, "y": 0.9}, {"x": 0.35, "y": 0.98}, {"x": 1.0, "y": 1.0}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_bolstering_05').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/legendarymods/armor_bolstering_05.json</label> <div class="box" id="ptsjson">x = 0.0, y = 0.59<br>x = 0.05, y = 0.59<br>x = 0.1, y = 0.62<br>x = 0.15, y = 0.73<br>x = 0.25, y = 0.9<br>x = 0.35, y = 0.98<br>x = 1.0, y = 1.0<br></div></td></tr>
 <tr><td></td><td></td></tr></table>
 </body> </html>

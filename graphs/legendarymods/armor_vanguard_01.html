@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="armor_vanguard_01.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_armor_vanguard_01"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0, "y": 1.0}, {"x": 650, "y": 1.0}, {"x": 750, "y": 0.99}, {"x": 850, "y": 0.96}, {"x": 900, "y": 0.95}, {"x": 950, "y": 0.94}, {"x": 1000, "y": 0.94}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_vanguard_01').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/legendarymods/armor_vanguard_01.json</label> <div class="box" id="ptsjson">x = 0, y = 1.0<br>x = 650, y = 1.0<br>x = 750, y = 0.99<br>x = 850, y = 0.96<br>x = 900, y = 0.95<br>x = 950, y = 0.94<br>x = 1000, y = 0.94<br></div></td></tr>
 <tr><td></td><td></td></tr></table>
 </body> </html>

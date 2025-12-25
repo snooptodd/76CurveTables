@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="cobj_weapon_lead.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_cobj_weapon_lead"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 1}, {"x": 2, "y": 1}, {"x": 3, "y": 2}, {"x": 4, "y": 2}, {"x": 5, "y": 3}, {"x": 6, "y": 3}, {"x": 7, "y": 4}, {"x": 8, "y": 4}, {"x": 9, "y": 5}, {"x": 10, "y": 5}, {"x": 11, "y": 6}, {"x": 12, "y": 6}, {"x": 13, "y": 7}, {"x": 14, "y": 7}, {"x": 15, "y": 8}, {"x": 16, "y": 8}, {"x": 17, "y": 9}, {"x": 18, "y": 9}, {"x": 19, "y": 10}, {"x": 20, "y": 10}, {"x": 25, "y": 13}, {"x": 50, "y": 25}, {"x": 100, "y": 50}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 1}, {"x": 2, "y": 1}, {"x": 3, "y": 2}, {"x": 4, "y": 2}, {"x": 5, "y": 3}, {"x": 6, "y": 3}, {"x": 7, "y": 4}, {"x": 8, "y": 4}, {"x": 9, "y": 5}, {"x": 10, "y": 5}, {"x": 11, "y": 6}, {"x": 12, "y": 6}, {"x": 13, "y": 7}, {"x": 14, "y": 7}, {"x": 15, "y": 8}, {"x": 16, "y": 8}, {"x": 17, "y": 9}, {"x": 18, "y": 9}, {"x": 19, "y": 10}, {"x": 20, "y": 10}, {"x": 25, "y": 13}, {"x": 50, "y": 25}, {"x": 100, "y": 50}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_cobj_weapon_lead').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/cobj/weapon/cobj_weapon_lead.json</label> <div class="box" id="ptsjson">x = 0, y = 0<br>x = 1, y = 1<br>x = 2, y = 1<br>x = 3, y = 2<br>x = 4, y = 2<br>x = 5, y = 3<br>x = 6, y = 3<br>x = 7, y = 4<br>x = 8, y = 4<br>x = 9, y = 5<br>x = 10, y = 5<br>x = 11, y = 6<br>x = 12, y = 6<br>x = 13, y = 7<br>x = 14, y = 7<br>x = 15, y = 8<br>x = 16, y = 8<br>x = 17, y = 9<br>x = 18, y = 9<br>x = 19, y = 10<br>x = 20, y = 10<br>x = 25, y = 13<br>x = 50, y = 25<br>x = 100, y = 50<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/cobj/weapon/cobj_weapon_lead.json</label> <div class="box" id="Livejson">x = 0, y = 0<br>x = 1, y = 1<br>x = 2, y = 1<br>x = 3, y = 2<br>x = 4, y = 2<br>x = 5, y = 3<br>x = 6, y = 3<br>x = 7, y = 4<br>x = 8, y = 4<br>x = 9, y = 5<br>x = 10, y = 5<br>x = 11, y = 6<br>x = 12, y = 6<br>x = 13, y = 7<br>x = 14, y = 7<br>x = 15, y = 8<br>x = 16, y = 8<br>x = 17, y = 9<br>x = 18, y = 9<br>x = 19, y = 10<br>x = 20, y = 10<br>x = 25, y = 13<br>x = 50, y = 25<br>x = 100, y = 50<br></div></td></tr></table>
 </body> </html>

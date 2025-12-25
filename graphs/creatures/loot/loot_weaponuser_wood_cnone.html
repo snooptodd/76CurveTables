@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="loot_weaponuser_wood_cnone.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_loot_weaponuser_wood_cnone"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 60}, {"x": 5, "y": 49}, {"x": 10, "y": 35}, {"x": 15, "y": 24}, {"x": 20, "y": 10}, {"x": 25, "y": 98}, {"x": 30, "y": 85}, {"x": 35, "y": 74}, {"x": 40, "y": 49}, {"x": 45, "y": 35}, {"x": 50, "y": 24}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 1, "y": 60}, {"x": 5, "y": 49}, {"x": 10, "y": 35}, {"x": 15, "y": 24}, {"x": 20, "y": 10}, {"x": 25, "y": 98}, {"x": 30, "y": 85}, {"x": 35, "y": 74}, {"x": 40, "y": 49}, {"x": 45, "y": 35}, {"x": 50, "y": 24}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_loot_weaponuser_wood_cnone').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/creatures/loot/loot_weaponuser_wood_cnone.json</label> <div class="box" id="ptsjson">x = 1, y = 60<br>x = 5, y = 49<br>x = 10, y = 35<br>x = 15, y = 24<br>x = 20, y = 10<br>x = 25, y = 98<br>x = 30, y = 85<br>x = 35, y = 74<br>x = 40, y = 49<br>x = 45, y = 35<br>x = 50, y = 24<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/creatures/loot/loot_weaponuser_wood_cnone.json</label> <div class="box" id="Livejson">x = 1, y = 60<br>x = 5, y = 49<br>x = 10, y = 35<br>x = 15, y = 24<br>x = 20, y = 10<br>x = 25, y = 98<br>x = 30, y = 85<br>x = 35, y = 74<br>x = 40, y = 49<br>x = 45, y = 35<br>x = 50, y = 24<br></div></td></tr></table>
 </body> </html>

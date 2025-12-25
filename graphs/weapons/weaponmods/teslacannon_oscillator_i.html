@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="teslacannon_oscillator_i.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_teslacannon_oscillator_i"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 30, "y": 17}, {"x": 40, "y": 21}, {"x": 50, "y": 25}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 30, "y": 17}, {"x": 40, "y": 21}, {"x": 50, "y": 25}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_teslacannon_oscillator_i').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/weapons/weaponmods/teslacannon_oscillator_i.json</label> <div class="box" id="ptsjson">x = 30, y = 17<br>x = 40, y = 21<br>x = 50, y = 25<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/weapons/weaponmods/teslacannon_oscillator_i.json</label> <div class="box" id="Livejson">x = 30, y = 17<br>x = 40, y = 21<br>x = 50, y = 25<br></div></td></tr></table>
 </body> </html>

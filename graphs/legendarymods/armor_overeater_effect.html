@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="armor_overeater_effect.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_armor_overeater_effect"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0, "y": 5}, {"x": 2, "y": 1}, {"x": 4, "y": 1}, {"x": 6, "y": 1}, {"x": 8, "y": 0.99}, {"x": 10, "y": 0.99}, {"x": 12, "y": 0.99}, {"x": 14, "y": 0.99}, {"x": 16, "y": 0.99}, {"x": 18, "y": 0.98}, {"x": 20, "y": 0.98}, {"x": 22, "y": 0.98}, {"x": 24, "y": 0.97}, {"x": 26, "y": 0.96}, {"x": 28, "y": 0.95}, {"x": 30, "y": 0.94}, {"x": 32, "y": 0.92}, {"x": 34, "y": 0.9}, {"x": 36, "y": 0.88}, {"x": 38, "y": 0.85}, {"x": 40, "y": 0.82}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_overeater_effect').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/legendarymods/armor_overeater_effect.json</label> <div class="box" id="ptsjson">x = 0, y = 5<br>x = 2, y = 1<br>x = 4, y = 1<br>x = 6, y = 1<br>x = 8, y = 0.99<br>x = 10, y = 0.99<br>x = 12, y = 0.99<br>x = 14, y = 0.99<br>x = 16, y = 0.99<br>x = 18, y = 0.98<br>x = 20, y = 0.98<br>x = 22, y = 0.98<br>x = 24, y = 0.97<br>x = 26, y = 0.96<br>x = 28, y = 0.95<br>x = 30, y = 0.94<br>x = 32, y = 0.92<br>x = 34, y = 0.9<br>x = 36, y = 0.88<br>x = 38, y = 0.85<br>x = 40, y = 0.82<br></div></td></tr>
 <tr><td></td><td></td></tr></table>
 </body> </html>

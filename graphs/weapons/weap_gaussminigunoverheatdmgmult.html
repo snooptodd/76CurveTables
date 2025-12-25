@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="weap_gaussminigunoverheatdmgmult.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_weap_gaussminigunoverheatdmgmult"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0.1, "y": 1.004}, {"x": 0.2, "y": 1.032}, {"x": 0.3, "y": 1.072}, {"x": 0.4, "y": 1.116}, {"x": 0.5, "y": 1.16}, {"x": 0.6, "y": 1.22}, {"x": 0.7, "y": 1.28}, {"x": 0.8, "y": 1.36}, {"x": 0.9, "y": 1.46}, {"x": 1, "y": 1.6}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 0.1, "y": 1.004}, {"x": 0.2, "y": 1.032}, {"x": 0.3, "y": 1.072}, {"x": 0.4, "y": 1.116}, {"x": 0.5, "y": 1.16}, {"x": 0.6, "y": 1.22}, {"x": 0.7, "y": 1.28}, {"x": 0.8, "y": 1.36}, {"x": 0.9, "y": 1.46}, {"x": 1, "y": 1.6}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_weap_gaussminigunoverheatdmgmult').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/weapons/weap_gaussminigunoverheatdmgmult.json</label> <div class="box" id="ptsjson">x = 0.1, y = 1.004<br>x = 0.2, y = 1.032<br>x = 0.3, y = 1.072<br>x = 0.4, y = 1.116<br>x = 0.5, y = 1.16<br>x = 0.6, y = 1.22<br>x = 0.7, y = 1.28<br>x = 0.8, y = 1.36<br>x = 0.9, y = 1.46<br>x = 1, y = 1.6<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/weapons/weap_gaussminigunoverheatdmgmult.json</label> <div class="box" id="Livejson">x = 0.1, y = 1.004<br>x = 0.2, y = 1.032<br>x = 0.3, y = 1.072<br>x = 0.4, y = 1.116<br>x = 0.5, y = 1.16<br>x = 0.6, y = 1.22<br>x = 0.7, y = 1.28<br>x = 0.8, y = 1.36<br>x = 0.9, y = 1.46<br>x = 1, y = 1.6<br></div></td></tr></table>
 </body> </html>

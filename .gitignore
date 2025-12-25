@@ -1,7 +1,10 @@
 /.vscode
 /json/
 /graphs.old/
+/test_graphs/
 *.php
 *.sh
 ALLJson2Graph.py
 Json2Graph.py
+test_index.html
+ALLJson2GraphHtmlJSchart.py

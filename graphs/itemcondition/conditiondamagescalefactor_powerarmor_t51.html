@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="conditiondamagescalefactor_powerarmor_t51.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_conditiondamagescalefactor_powerarmor_t51"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 0.048}, {"x": 10, "y": 0.048}, {"x": 20, "y": 0.048}, {"x": 30, "y": 0.048}, {"x": 40, "y": 0.043}, {"x": 50, "y": 0.043}, {"x": 60, "y": 0.04}, {"x": 70, "y": 0.04}, {"x": 80, "y": 0.04}, {"x": 90, "y": 0.04}, {"x": 100, "y": 0.04}, {"x": 200, "y": 0.04}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 1, "y": 0.048}, {"x": 10, "y": 0.048}, {"x": 20, "y": 0.048}, {"x": 30, "y": 0.048}, {"x": 40, "y": 0.043}, {"x": 50, "y": 0.043}, {"x": 60, "y": 0.04}, {"x": 70, "y": 0.04}, {"x": 80, "y": 0.04}, {"x": 90, "y": 0.04}, {"x": 100, "y": 0.04}, {"x": 200, "y": 0.04}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_conditiondamagescalefactor_powerarmor_t51').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/itemcondition/conditiondamagescalefactor_powerarmor_t51.json</label> <div class="box" id="ptsjson">x = 1, y = 0.048<br>x = 10, y = 0.048<br>x = 20, y = 0.048<br>x = 30, y = 0.048<br>x = 40, y = 0.043<br>x = 50, y = 0.043<br>x = 60, y = 0.04<br>x = 70, y = 0.04<br>x = 80, y = 0.04<br>x = 90, y = 0.04<br>x = 100, y = 0.04<br>x = 200, y = 0.04<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/itemcondition/conditiondamagescalefactor_powerarmor_t51.json</label> <div class="box" id="Livejson">x = 1, y = 0.048<br>x = 10, y = 0.048<br>x = 20, y = 0.048<br>x = 30, y = 0.048<br>x = 40, y = 0.043<br>x = 50, y = 0.043<br>x = 60, y = 0.04<br>x = 70, y = 0.04<br>x = 80, y = 0.04<br>x = 90, y = 0.04<br>x = 100, y = 0.04<br>x = 200, y = 0.04<br></div></td></tr></table>
 </body> </html>

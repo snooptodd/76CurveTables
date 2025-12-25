@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="armor_universal_tier67.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_armor_universal_tier67"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 220}, {"x": 5, "y": 246}, {"x": 10, "y": 275}, {"x": 15, "y": 307}, {"x": 20, "y": 343}, {"x": 25, "y": 383}, {"x": 30, "y": 428}, {"x": 35, "y": 478}, {"x": 40, "y": 534}, {"x": 45, "y": 597}, {"x": 50, "y": 666}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 1, "y": 145}, {"x": 5, "y": 162}, {"x": 10, "y": 181}, {"x": 15, "y": 202}, {"x": 20, "y": 226}, {"x": 25, "y": 252}, {"x": 30, "y": 282}, {"x": 35, "y": 315}, {"x": 40, "y": 352}, {"x": 45, "y": 393}, {"x": 50, "y": 439}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_universal_tier67').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/player/armor/armor_universal_tier67.json</label> <div class="box" id="ptsjson">x = 1, y = 220<br>x = 5, y = 246<br>x = 10, y = 275<br>x = 15, y = 307<br>x = 20, y = 343<br>x = 25, y = 383<br>x = 30, y = 428<br>x = 35, y = 478<br>x = 40, y = 534<br>x = 45, y = 597<br>x = 50, y = 666<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/player/armor/armor_universal_tier67.json</label> <div class="box" id="Livejson">x = 1, y = 145<br>x = 5, y = 162<br>x = 10, y = 181<br>x = 15, y = 202<br>x = 20, y = 226<br>x = 25, y = 252<br>x = 30, y = 282<br>x = 35, y = 315<br>x = 40, y = 352<br>x = 45, y = 393<br>x = 50, y = 439<br></div></td></tr></table>
 </body> </html>

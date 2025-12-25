@@ -11,12 +11,13 @@
 
 ## todo
 # add commandline interface
+# convert from matplotlib to chartjs
 
 import os
 import pathlib
 import json
 import filecmp
-import matplotlib.pyplot as plt
+# Using Chart.js for client-side rendering; matplotlib is no longer required
 
 DEBUG=False
 ROOT_DIR="./json"
@@ -24,6 +25,8 @@ LIVE_DIR="/Live_P64.01"
 PTS_DIR="/PTS_P66.0_18Dec"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
+OUTPUT_DIR="./graphs"
+INDEX_FILE="./index.html"
 PTSDIRList=[]
 LIVEDIRList=[]
 PTSJsonaltPath = PTSJsonPath = PTSPath = PTSDIRList = LiveJsonaltPath = LiveJsonPath = LivePath = LiveDIRList = file = file1 = file2 = file3 = file4 = indexhtml = ""
@@ -32,6 +35,8 @@ all=set(())
 if DEBUG :
     LIVE_DIR="/test_live"
     PTS_DIR="/test_pts"
+    OUTPUT_DIR="./test_graphs"
+    INDEX_FILE="./test_index.html"
 
 
 def htmlheader(pagename):
@@ -84,101 +89,97 @@ def makegraph():
 
     if DEBUG :
         print("DEBUG\n%s\n%s\n%s\n%s\n" % (file1, file2, file3, file4))
-        return
-    
-    # Load JSON data from a file and extract the x and y data
-        
+        # return
+
+    # Helper to build dataset entries for Chart.js
+    datasets = []
+    colors = ['#1f77b4','#ff7f0e','#2ca02c','#d62728']
+
     if file1 != '':
         title=file1.stem
         pathtmp = str(file1.parent)[str(file1.parent).find('/jsonalt')+8:]
-        with open(file1, 'r') as file:
-            file1_json_data = json.load(file)
-            file.close
+        with open(file1, 'r') as fh:
+            file1_json_data = json.load(fh)
         for entry in file1_json_data["curve"]:
-            # print(entry)
             file1txtdata+=f'x = {entry["x"]}, y = {entry["y"]}<br>'
             file1X.append(entry["x"])
             file1Y.append(entry["y"])
-        plt.plot(file1X,file1Y, label=str(PTS_DIR)[1:]+' jsonAlt', marker = 'o', markevery=0.1 )
-        for key,value in enumerate(file1X):
-            if not value%10:
-                plt.annotate('(' + str(file1X[key]) + ', ' + str(file1Y[key]) + ')',(file1X[key], file1Y[key]))
+        data_points = [{"x": x, "y": y} for x,y in zip(file1X,file1Y)]
+        datasets.append({"label": f"{str(PTS_DIR)[1:]} jsonAlt", "data": data_points, "borderColor": colors[0], "backgroundColor": colors[0], "tension": 0.0, "pointRadius": 3})
         file1subpagehtml+=f'<label for="ptsjsonalt">{file1}</label> <div class="box" id="ptsjsonalt">{file1txtdata}</div>'
 
     if file2 != '':
         title=(file2.stem)
         pathtmp = str(file2.parent)[str(file2.parent).find('/json',10)+5:]
-        with open(file2, 'r') as file:
-            file2_json_data = json.load(file)
-            file.close
+        with open(file2, 'r') as fh:
+            file2_json_data = json.load(fh)
         for entry in file2_json_data["curve"]:
-            # print(entry)
             file2txtdata+=f'x = {entry["x"]}, y = {entry["y"]}<br>'
             file2X.append(entry["x"])
             file2Y.append(entry["y"])
-        plt.plot(file2X,file2Y, label=str(PTS_DIR)[1:]+" json", marker = '*', markevery=0.1)
-        for key,value in enumerate(file2X):
-            if not value%10:
-                plt.annotate('(' + str(file2X[key]) + ', ' + str(file2Y[key]) + ')',(file2X[key], file2Y[key]))
+        data_points = [{"x": x, "y": y} for x,y in zip(file2X,file2Y)]
+        datasets.append({"label": f"{str(PTS_DIR)[1:]} json", "data": data_points, "borderColor": colors[1], "backgroundColor": colors[1], "tension": 0.0, "pointRadius": 3})
         file2subpagehtml+=f'<label for="ptsjson">{file2}</label> <div class="box" id="ptsjson">{file2txtdata}</div>'
 
     if file3 != '':
         title=(file3.stem)
-        pathtmp = str(file3.parent)[str(file3.parent).find('/jsonalt')+8:]       
-        with open(file3, 'r') as file:
-            file3_json_data = json.load(file)
-            file.close
+        pathtmp = str(file3.parent)[str(file3.parent).find('/jsonalt')+8:]
+        with open(file3, 'r') as fh:
+            file3_json_data = json.load(fh)
         for entry in file3_json_data["curve"]:
-            # print(entry)
             file3txtdata+=f'x = {entry["x"]}, y = {entry["y"]}<br>'
             file3X.append(entry["x"])
             file3Y.append(entry["y"])
-        plt.plot(file3X,file3Y, label=str(LIVE_DIR)[1:]+" jsonAlt", marker = 'x', markevery=0.1)
-        for key,value in enumerate(file3X):
-            if not value%10:
-                plt.annotate('(' + str(file3X[key]) + ', ' + str(file3Y[key]) + ')',(file3X[key], file3Y[key]))
+        data_points = [{"x": x, "y": y} for x,y in zip(file3X,file3Y)]
+        datasets.append({"label": f"{str(LIVE_DIR)[1:]} jsonAlt", "data": data_points, "borderColor": colors[2], "backgroundColor": colors[2], "tension": 0.0, "pointRadius": 3})
         file3subpagehtml+=f'<label for="Livejsonalt">{file3}</label> <div class="box" id="Livejsonalt">{file3txtdata}</div>'
 
     if file4 != '':
         title=(file4.stem)
         pathtmp = str(file4.parent)[str(file4.parent).find('/json',10)+5:]
-        with open(file4, 'r') as file:
-            file4_json_data = json.load(file)
-            file.close
+        with open(file4, 'r') as fh:
+            file4_json_data = json.load(fh)
         for entry in file4_json_data["curve"]:
-            # print(entry)
             file4txtdata+=f'x = {entry["x"]}, y = {entry["y"]}<br>'
             file4X.append(entry["x"])
             file4Y.append(entry["y"]) 
-        plt.plot(file4X,file4Y, label=str(LIVE_DIR)[1:]+" json", marker = '+', markevery=0.1)   
-        for key,value in enumerate(file4X):
-            if not value%10:
-                plt.annotate('(' + str(file4X[key]) + ', ' + str(file4Y[key]) + ')',(file4X[key], file4Y[key]))
+        data_points = [{"x": x, "y": y} for x,y in zip(file4X,file4Y)]
+        datasets.append({"label": f"{str(LIVE_DIR)[1:]} json", "data": data_points, "borderColor": colors[3], "backgroundColor": colors[3], "tension": 0.0, "pointRadius": 3})
         file4subpagehtml+=f'<label for="Livejson">{file4}</label> <div class="box" id="Livejson">{file4txtdata}</div>'
 
-    # Plotting
-    xlabel="X"
-    ylabel="Y"
-    savePath="./graphs"+pathtmp+"/" #return path from past jsonalt. done above
-    saveName=title+'.png'
-    # check if path exist and if not create it.
+    # Build HTML page with Chart.js
+    savePath=OUTPUT_DIR+pathtmp+"/"
+    saveName=title+'.html'
     if not os.path.isdir(savePath):
         os.makedirs(savePath)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel,rotation=0)
-    plt.title(title)
-    plt.legend()
-    # plt.grid(True)
-    plt.savefig(savePath+saveName)
-    plt.close()
-    subpagehtml+=f'''{htmlheader(title)}
-<img src="{saveName}"><p>
-<table><tr><td>{file1subpagehtml}</td><td>{file2subpagehtml}</td></tr>
-<tr><td>{file3subpagehtml}</td><td>{file4subpagehtml}</td></tr></table>
-{htmlfooter()}'''
-    writefile(savePath+title+'.html', subpagehtml)
-    # indexhtml+=f'<a href="{savePath+title+'.html'}">{title}</a><p>'
-    # compare file1X and file3X / file2X and file4X to see if changed.
+
+    canvas_id = f"chart_{title}"
+    # Prepare JS datasets literal
+    import html as _html
+    def to_js_array(obj):
+        # simple conversion for our data structure
+        return json.dumps(obj)
+
+    # Build the HTML using safe concatenation so JS object braces don't interfere with Python f-strings
+    datasets_json = json.dumps(datasets)
+    chart_html = ''
+    chart_html += htmlheader(title) + "\n"
+    chart_html += '<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>\n'
+    chart_html += '<div style="width:900px; max-width:100%;">\n'
+    chart_html += f'  <canvas id="{canvas_id}"></canvas>\n'
+    chart_html += '</div>\n'
+    chart_html += '<script>\n'
+    chart_html += 'const datasets = ' + datasets_json + ';\n'
+    chart_html += "const ctx = document.getElementById('" + canvas_id + "').getContext('2d');\n"
+    chart_html += "new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });\n"
+    chart_html += '</script>\n'
+    chart_html += '<p>\n'
+    chart_html += '<table><tr><td>' + file1subpagehtml + '</td><td>' + file2subpagehtml + '</td></tr>\n'
+    chart_html += '<tr><td>' + file3subpagehtml + '</td><td>' + file4subpagehtml + '</td></tr></table>\n'
+    chart_html += htmlfooter() + '\n'
+    writefile(savePath+saveName, chart_html)
+
+    # detect changes between pts and live curves
     ptschanged=False
     if file1!='' and file3!='':
         if file1X!=file3X or file1Y!=file3Y:
@@ -186,8 +187,14 @@ def makegraph():
     if file2!='' and file4!='':
         if file2X!=file4X or file2Y!=file4Y:
             ptschanged=True
-    indexhtml+=tablerow(f'<a href="{savePath+title+'.html'}">{title}</a>',ptsnew,ptsmissing,ptschanged)
-    return 
+    if file2!='' and file3!='':
+        if file2X!=file3X or file2Y!=file3Y:
+            ptschanged=True
+    if file1!='' and file4!='':
+        if file1X!=file4X or file1Y!=file4Y:
+            ptschanged=True
+    indexhtml+=tablerow(f'<a href="{savePath+title+'.html'}">{title}</a>',ptsnew,ptsmissing,ptschanged)+'\n'
+    return
 
 
 # # get list of json files in dirs
@@ -266,4 +273,4 @@ for name in alllist:
 
 indexhtml+=tableend()
 indexhtml+=htmlfooter()
-writefile('./index.html',indexhtml)
+writefile(INDEX_FILE,indexhtml)

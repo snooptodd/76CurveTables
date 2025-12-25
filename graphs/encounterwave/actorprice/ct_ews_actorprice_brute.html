@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="ct_ews_actorprice_brute.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_ct_ews_actorprice_brute"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 3}, {"x": 5, "y": 5}, {"x": 10, "y": 10}, {"x": 40, "y": 40}, {"x": 50, "y": 50}, {"x": 90, "y": 90}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 1, "y": 3}, {"x": 5, "y": 5}, {"x": 10, "y": 10}, {"x": 40, "y": 40}, {"x": 50, "y": 50}, {"x": 90, "y": 90}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_ct_ews_actorprice_brute').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/encounterwave/actorprice/ct_ews_actorprice_brute.json</label> <div class="box" id="ptsjson">x = 1, y = 3<br>x = 5, y = 5<br>x = 10, y = 10<br>x = 40, y = 40<br>x = 50, y = 50<br>x = 90, y = 90<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/encounterwave/actorprice/ct_ews_actorprice_brute.json</label> <div class="box" id="Livejson">x = 1, y = 3<br>x = 5, y = 5<br>x = 10, y = 10<br>x = 40, y = 40<br>x = 50, y = 50<br>x = 90, y = 90<br></div></td></tr></table>
 </body> </html>

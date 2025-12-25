@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="xp_universal_tier62.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_xp_universal_tier62"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 990}, {"x": 7, "y": 1280}, {"x": 13, "y": 1569}, {"x": 19, "y": 1858}, {"x": 25, "y": 2148}, {"x": 31, "y": 2437}, {"x": 37, "y": 2726}, {"x": 43, "y": 3016}, {"x": 49, "y": 3305}, {"x": 55, "y": 3595}, {"x": 61, "y": 3884}, {"x": 67, "y": 4174}, {"x": 73, "y": 4464}, {"x": 79, "y": 4753}, {"x": 85, "y": 5043}, {"x": 91, "y": 5333}, {"x": 97, "y": 5622}, {"x": 103, "y": 5912}, {"x": 109, "y": 6202}, {"x": 115, "y": 6492}, {"x": 121, "y": 6782}, {"x": 127, "y": 7072}, {"x": 133, "y": 7362}, {"x": 139, "y": 7652}, {"x": 145, "y": 7942}, {"x": 151, "y": 8232}, {"x": 157, "y": 8522}, {"x": 163, "y": 8812}, {"x": 169, "y": 9103}, {"x": 175, "y": 9393}, {"x": 181, "y": 9683}, {"x": 187, "y": 9974}, {"x": 193, "y": 10264}, {"x": 199, "y": 10554}, {"x": 205, "y": 10845}, {"x": 211, "y": 11135}, {"x": 217, "y": 11426}, {"x": 223, "y": 11716}, {"x": 229, "y": 12007}, {"x": 235, "y": 12298}, {"x": 241, "y": 12588}, {"x": 247, "y": 12879}, {"x": 253, "y": 13170}, {"x": 259, "y": 13461}, {"x": 265, "y": 13752}, {"x": 271, "y": 14043}, {"x": 277, "y": 14334}, {"x": 283, "y": 14625}, {"x": 289, "y": 14916}, {"x": 295, "y": 15207}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_xp_universal_tier62').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/player/xp/xp_universal_tier62.json</label> <div class="box" id="ptsjson">x = 1, y = 990<br>x = 7, y = 1280<br>x = 13, y = 1569<br>x = 19, y = 1858<br>x = 25, y = 2148<br>x = 31, y = 2437<br>x = 37, y = 2726<br>x = 43, y = 3016<br>x = 49, y = 3305<br>x = 55, y = 3595<br>x = 61, y = 3884<br>x = 67, y = 4174<br>x = 73, y = 4464<br>x = 79, y = 4753<br>x = 85, y = 5043<br>x = 91, y = 5333<br>x = 97, y = 5622<br>x = 103, y = 5912<br>x = 109, y = 6202<br>x = 115, y = 6492<br>x = 121, y = 6782<br>x = 127, y = 7072<br>x = 133, y = 7362<br>x = 139, y = 7652<br>x = 145, y = 7942<br>x = 151, y = 8232<br>x = 157, y = 8522<br>x = 163, y = 8812<br>x = 169, y = 9103<br>x = 175, y = 9393<br>x = 181, y = 9683<br>x = 187, y = 9974<br>x = 193, y = 10264<br>x = 199, y = 10554<br>x = 205, y = 10845<br>x = 211, y = 11135<br>x = 217, y = 11426<br>x = 223, y = 11716<br>x = 229, y = 12007<br>x = 235, y = 12298<br>x = 241, y = 12588<br>x = 247, y = 12879<br>x = 253, y = 13170<br>x = 259, y = 13461<br>x = 265, y = 13752<br>x = 271, y = 14043<br>x = 277, y = 14334<br>x = 283, y = 14625<br>x = 289, y = 14916<br>x = 295, y = 15207<br></div></td></tr>
 <tr><td></td><td></td></tr></table>
 </body> </html>

@@ -4,7 +4,16 @@
 <script src="sortable.min.js"></script>
 <link rel="stylesheet" href="sortable-theme-minimal.css" />
 <link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
-<img src="itemconditionvaluemultiplier.png"><p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div style="width:900px; max-width:100%;">
+  <canvas id="chart_itemconditionvaluemultiplier"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 0.15}, {"x": 2, "y": 0.22}, {"x": 3, "y": 0.24}, {"x": 4, "y": 0.26}, {"x": 5, "y": 0.28}, {"x": 10, "y": 0.35}, {"x": 15, "y": 0.4}, {"x": 20, "y": 0.44}, {"x": 25, "y": 0.47}, {"x": 30, "y": 0.5}, {"x": 35, "y": 0.53}, {"x": 40, "y": 0.56}, {"x": 45, "y": 0.59}, {"x": 50, "y": 0.61}, {"x": 55, "y": 0.63}, {"x": 60, "y": 0.66}, {"x": 65, "y": 0.68}, {"x": 70, "y": 0.7}, {"x": 75, "y": 0.72}, {"x": 80, "y": 0.74}, {"x": 85, "y": 0.75}, {"x": 90, "y": 0.77}, {"x": 95, "y": 0.79}, {"x": 100, "y": 0.81}, {"x": 200, "y": 0.81}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 0.15}, {"x": 2, "y": 0.22}, {"x": 3, "y": 0.24}, {"x": 4, "y": 0.26}, {"x": 5, "y": 0.28}, {"x": 10, "y": 0.35}, {"x": 15, "y": 0.4}, {"x": 20, "y": 0.44}, {"x": 25, "y": 0.47}, {"x": 30, "y": 0.5}, {"x": 35, "y": 0.53}, {"x": 40, "y": 0.56}, {"x": 45, "y": 0.59}, {"x": 50, "y": 0.61}, {"x": 55, "y": 0.63}, {"x": 60, "y": 0.66}, {"x": 65, "y": 0.68}, {"x": 70, "y": 0.7}, {"x": 75, "y": 0.72}, {"x": 80, "y": 0.74}, {"x": 85, "y": 0.75}, {"x": 90, "y": 0.77}, {"x": 95, "y": 0.79}, {"x": 100, "y": 0.81}, {"x": 200, "y": 0.81}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_itemconditionvaluemultiplier').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
 <table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/itemconditionvaluemultiplier.json</label> <div class="box" id="ptsjson">x = 0, y = 0<br>x = 1, y = 0.15<br>x = 2, y = 0.22<br>x = 3, y = 0.24<br>x = 4, y = 0.26<br>x = 5, y = 0.28<br>x = 10, y = 0.35<br>x = 15, y = 0.4<br>x = 20, y = 0.44<br>x = 25, y = 0.47<br>x = 30, y = 0.5<br>x = 35, y = 0.53<br>x = 40, y = 0.56<br>x = 45, y = 0.59<br>x = 50, y = 0.61<br>x = 55, y = 0.63<br>x = 60, y = 0.66<br>x = 65, y = 0.68<br>x = 70, y = 0.7<br>x = 75, y = 0.72<br>x = 80, y = 0.74<br>x = 85, y = 0.75<br>x = 90, y = 0.77<br>x = 95, y = 0.79<br>x = 100, y = 0.81<br>x = 200, y = 0.81<br></div></td></tr>
 <tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/itemconditionvaluemultiplier.json</label> <div class="box" id="Livejson">x = 0, y = 0<br>x = 1, y = 0.15<br>x = 2, y = 0.22<br>x = 3, y = 0.24<br>x = 4, y = 0.26<br>x = 5, y = 0.28<br>x = 10, y = 0.35<br>x = 15, y = 0.4<br>x = 20, y = 0.44<br>x = 25, y = 0.47<br>x = 30, y = 0.5<br>x = 35, y = 0.53<br>x = 40, y = 0.56<br>x = 45, y = 0.59<br>x = 50, y = 0.61<br>x = 55, y = 0.63<br>x = 60, y = 0.66<br>x = 65, y = 0.68<br>x = 70, y = 0.7<br>x = 75, y = 0.72<br>x = 80, y = 0.74<br>x = 85, y = 0.75<br>x = 90, y = 0.77<br>x = 95, y = 0.79<br>x = 100, y = 0.81<br>x = 200, y = 0.81<br></div></td></tr></table>
 </body> </html>

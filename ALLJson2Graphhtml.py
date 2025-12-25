@@ -20,8 +20,8 @@ import matplotlib.pyplot as plt
 
 DEBUG=False
 ROOT_DIR="./json"
-LIVE_DIR="/Live_P62.1"
-PTS_DIR="/PTS_P64.01_6Oct"
+LIVE_DIR="/Live_P64.01"
+PTS_DIR="/PTS_P66.0_18Dec"
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME="*.json"
 PTSDIRList=[]
@@ -178,6 +178,14 @@ def makegraph():
 {htmlfooter()}'''
     writefile(savePath+title+'.html', subpagehtml)
     # indexhtml+=f'<a href="{savePath+title+'.html'}">{title}</a><p>'
+    # compare file1X and file3X / file2X and file4X to see if changed.
+    ptschanged=False
+    if file1!='' and file3!='':
+        if file1X!=file3X or file1Y!=file3Y:
+            ptschanged=True
+    if file2!='' and file4!='':
+        if file2X!=file4X or file2Y!=file4Y:
+            ptschanged=True
     indexhtml+=tablerow(f'<a href="{savePath+title+'.html'}">{title}</a>',ptsnew,ptsmissing,ptschanged)
     return 
 
@@ -214,9 +222,11 @@ indexhtml=htmlheader('Curve Table Graphs')
 indexhtml+=tablestart('Name','PTS New','PTS Missing','PTS Changed')
 
 for name in alllist:
-    # want to show on the page if a flle is changed new or removed in the pts
+    # want to show on the page if a flle is changed new or removed in the pts.
+    # I will ignore whitespace and formatting changes.
     # 
     # i alredy have the different files looked up and will use them to test for changes.
+    # i will parse the files later to make the graphs so let's use the == operator to check for changes in the parsed data.
 
     # PTS New is file found in PTS and not in Live
     ## if file3 and file4 not found then PTS New
@@ -229,7 +239,7 @@ for name in alllist:
     ## or if file2 and file4 are found and differnet then PTS changed.
 
     file1 = file2 = file3 = file4 = file = ''
-    ptsnew = ptsmissing = ptschanged = ''
+    ptsnew = ptsmissing = False
     for file in PTSJsonaltPath.rglob(name):
         file1 = file
     for file in PTSJsonPath.rglob(name):
@@ -245,13 +255,13 @@ for name in alllist:
     if file1=='' and file2=='':
         ptsmissing=True
 
-    if file1!='' and file3!='':
-        if not filecmp.cmp(file1,file3,shallow=False):
-            ptschanged=True
+    # if file1!='' and file3!='':
+    #     if not filecmp.cmp(file1,file3,shallow=False):
+    #         ptschanged=True
 
-    if file2!='' and file4!='':
-        if not filecmp.cmp(file2,file4,shallow=False):
-            ptschanged=True
+    # if file2!='' and file4!='':
+    #     if not filecmp.cmp(file2,file4,shallow=False):
+    #         ptschanged=True
     makegraph()
 
 indexhtml+=tableend()

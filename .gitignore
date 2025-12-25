@@ -4,6 +4,7 @@
 /test_graphs/
 *.php
 *.sh
+*.out
 ALLJson2Graph.py
 Json2Graph.py
 test_index.html

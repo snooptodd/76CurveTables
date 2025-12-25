@@ -208,6 +208,18 @@ LiveJsonPath = pathlib.Path(ROOT_DIR+LIVE_DIR+COMMON_DIR+"/json")
 LivePath = pathlib.Path(ROOT_DIR+LIVE_DIR+COMMON_DIR)
 LiveDIRList = list(LivePath.rglob(SEARCH_NAME))
 
+# Build filename->Path lookup maps (one-time) to avoid repeated rglob directory scans
+def _build_name_map(pathobj):
+    m = {}
+    for p in pathobj.rglob(SEARCH_NAME):
+        m[p.name] = p
+    return m
+
+PTS_jsonalt_map = _build_name_map(PTSJsonaltPath)
+PTS_json_map = _build_name_map(PTSJsonPath)
+LIVE_jsonalt_map = _build_name_map(LiveJsonaltPath)
+LIVE_json_map = _build_name_map(LiveJsonPath)
+
 # check that we found something in both dir paths.
 if len(PTSDIRList) == 0:
     exit('PTS dir empty')
@@ -247,14 +259,11 @@ for name in alllist:
 
     file1 = file2 = file3 = file4 = file = ''
     ptsnew = ptsmissing = False
-    for file in PTSJsonaltPath.rglob(name):
-        file1 = file
-    for file in PTSJsonPath.rglob(name):
-        file2 = file
-    for file in LiveJsonaltPath.rglob(name):
-        file3 = file
-    for file in LiveJsonPath.rglob(name):
-        file4 = file
+    # Use prebuilt lookup maps instead of re-scanning directories
+    file1 = PTS_jsonalt_map.get(name, '')
+    file2 = PTS_json_map.get(name, '')
+    file3 = LIVE_jsonalt_map.get(name, '')
+    file4 = LIVE_json_map.get(name, '')
 
     if file3=='' and file4=='':
         ptsnew=True

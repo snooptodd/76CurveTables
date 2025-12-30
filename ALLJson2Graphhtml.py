@@ -43,15 +43,20 @@ def htmlheader(pagename):
     return f'''<!DOCTYPE html> <html lang="en"> 
 <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
 <title>{pagename}</title> 
-<script src="sortable.min.js"></script>
-<link rel="stylesheet" href="sortable-theme-minimal.css" />
-<link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>'''
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css" />
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEv%tFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.3.6/js/dataTables.js"></script> </head> <body>'''
 
 def htmlfooter():
-    return '</body> </html>'
+    return '''<script>$(document).ready( function () {
+    $('#myTable').DataTable({
+        paging: false
+    });
+} );</script> </body> </html>'''
 
 def tablestart(col1,col2,col3,col4):
-    return f'''<table data-sortable>
+    return f'''<table id="myTable" class="display">
       <caption></caption>
       <thead>
         <th>{col1}</th>
@@ -63,7 +68,7 @@ def tablestart(col1,col2,col3,col4):
     '''
 
 def tablerow(col1,col2,col3,col4):
-    return f'''  <tr><td>{col1}</td><td>{col2}</td><td>{col3}</td><td>{col4}</td></tr>'''
+    return f'''  <tr><td>{col1}</td><td>{col2}</td><td>{col3}</td><td> {col4}</td></tr>'''
 
 def tableend():
     return '</tbody></table>'

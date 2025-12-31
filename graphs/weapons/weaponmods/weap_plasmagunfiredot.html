@@ -1,11 +1,11 @@
 <!DOCTYPE html> <html lang="en"> 
 <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
 <title>weap_plasmagunfiredot</title> 
-<script src="sortable.min.js"></script>
-<link rel="stylesheet" href="sortable-theme-minimal.css" />
-<link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">weap_plasmagunfiredot</h2>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div style="width:900px; max-width:100%;">
+<div class="plot">
   <canvas id="chart_weap_plasmagunfiredot"></canvas>
 </div>
 <script>
@@ -14,6 +14,7 @@ const ctx = document.getElementById('chart_weap_plasmagunfiredot').getContext('2
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
-<table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/weapons/weaponmods/weap_plasmagunfiredot.json</label> <div class="box" id="ptsjson">x = 1, y = 6<br>x = 5, y = 6<br>x = 10, y = 8<br>x = 15, y = 8<br>x = 20, y = 10<br>x = 25, y = 10<br>x = 30, y = 11<br>x = 35, y = 11<br>x = 40, y = 13<br>x = 45, y = 13<br>x = 50, y = 13<br></div></td></tr>
-<tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/weapons/weaponmods/weap_plasmagunfiredot.json</label> <div class="box" id="Livejson">x = 1, y = 6<br>x = 5, y = 6<br>x = 10, y = 8<br>x = 15, y = 8<br>x = 20, y = 10<br>x = 25, y = 10<br>x = 30, y = 11<br>x = 35, y = 11<br>x = 40, y = 13<br>x = 45, y = 13<br>x = 50, y = 13<br></div></td></tr></table>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 6<br>x = 5, y = 6<br>x = 10, y = 8<br>x = 15, y = 8<br>x = 20, y = 10<br>x = 25, y = 10<br>x = 30, y = 11<br>x = 35, y = 11<br>x = 40, y = 13<br>x = 45, y = 13<br>x = 50, y = 13<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = 6<br>x = 5, y = 6<br>x = 10, y = 8<br>x = 15, y = 8<br>x = 20, y = 10<br>x = 25, y = 10<br>x = 30, y = 11<br>x = 35, y = 11<br>x = 40, y = 13<br>x = 45, y = 13<br>x = 50, y = 13<br></div></td></tr></tbody></table>
 </body> </html>

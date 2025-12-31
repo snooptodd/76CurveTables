@@ -1,4 +1,4 @@
-div {
+.box {
     border: solid;
     padding: 1rem;
     width: fit-content;
@@ -11,7 +11,15 @@ div {
             width: 100%;
 }
 
-table {
+.center {
+    text-align: center;
+}
+
+div.plot {
+    width: 900px;
+    max-width: 100%;
+}
+table.sub {
   border-collapse: collapse;
   border: 2px solid rgb(140 140 140);
   font-family: sans-serif;
@@ -19,18 +27,29 @@ table {
   letter-spacing: 1px;
 }
 
-thead th {
+/* thead th {
             position: sticky;
             background-color: rgb(228 240 245);
             top: 0;
             z-index: 1;
-        }
+        } */
 
-td {
+td.sub, th.sub{
   border: 1px solid rgb(160 160 160);
   padding: 8px 10px;
 }
 
-tbody > tr:nth-of-type(even) {
+/* tbody > tr:nth-of-type(even) {
   background-color: rgb(237 238 242);
+} */
+.ptsjsonalt {
+    background-color: #1f77b480;
+}
+.ptsjson {
+    background-color: #ff7f0e80;
+}
+.livejsonalt {background-color: #2ca02c80;
+}
+.livejson {
+  background-color: #d6272880;
 }

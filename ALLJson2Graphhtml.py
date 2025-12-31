@@ -20,58 +20,55 @@ import filecmp
 # Using Chart.js for client-side rendering; matplotlib is no longer required
 
 DEBUG=False
-ROOT_DIR="./json"
-LIVE_DIR="/Live_P64.01"
-PTS_DIR="/PTS_P66.0_18Dec"
+ROOT_DIR='./json'
+LIVE_DIR='/Live_P64.01'
+PTS_DIR='/PTS_P66.0_18Dec'
 COMMON_DIR='/misc/curvetables'
-SEARCH_NAME="*.json"
-OUTPUT_DIR="./graphs"
-INDEX_FILE="./index.html"
+SEARCH_NAME='*.json'
+OUTPUT_DIR='./graphs'
+INDEX_FILE='./index.html'
+STYLESHEET_PATH='/76CurveTables/styles.css'
 PTSDIRList=[]
 LIVEDIRList=[]
-PTSJsonaltPath = PTSJsonPath = PTSPath = PTSDIRList = LiveJsonaltPath = LiveJsonPath = LivePath = LiveDIRList = file = file1 = file2 = file3 = file4 = indexhtml = ""
+PTSJsonaltPath = PTSJsonPath = PTSPath = PTSDIRList = LiveJsonaltPath = LiveJsonPath = LivePath = LiveDIRList = file = file1 = file2 = file3 = file4 = indexhtml = ''
 all=set(())
 
 if DEBUG :
-    LIVE_DIR="/test_live"
-    PTS_DIR="/test_pts"
-    OUTPUT_DIR="./test_graphs"
-    INDEX_FILE="./test_index.html"
+    LIVE_DIR='/test_live'
+    PTS_DIR='/test_pts'
+    OUTPUT_DIR='./test_graphs'
+    INDEX_FILE='./test_index.html'
+    STYLESHEET_PATH='/~todd/76CurveTables/styles.css'
 
 
 def htmlheader(pagename):
     return f'''<!DOCTYPE html> <html lang="en"> 
 <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
 <title>{pagename}</title> 
-<link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css" />
-<link rel="stylesheet" href="/76CurveTables/styles.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEv%tFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/2.3.6/js/dataTables.js"></script> </head> <body>'''
+<link rel="stylesheet" href="{STYLESHEET_PATH}">
+ </head> <body>'''
 
 def htmlfooter():
-    return '''<script>$(document).ready( function () {
-    $('#myTable').DataTable({
-        paging: false
-    });
-} );</script> </body> </html>'''
+    return '''</body> </html>'''
 
 def tablestart(col1,col2,col3,col4):
-    return f'''<table id="myTable" class="display">
+    return f'''<link rel="stylesheet" href="https://cdn.datatables.net/2.3.6/css/dataTables.dataTables.css" />
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.3.6/js/dataTables.js"></script>
+<table id="myTable" class="display">
       <caption></caption>
-      <thead>
-        <th>{col1}</th>
-        <th>{col2}</th>
-        <th>{col3}</th>
-        <th>{col4}</th>
-      </thead>
+      <thead> <th>{col1}</th> <th>{col2}</th> <th>{col3}</th> <th>{col4}</th> </thead>
       <tbody>
     '''
 
 def tablerow(col1,col2,col3,col4):
-    return f'''  <tr><td>{col1}</td><td>{col2}</td><td>{col3}</td><td> {col4}</td></tr>'''
+    return f'''  <tr><td>{col1}</td> <td>{col2}</td> <td>{col3}</td> <td>{col4}</td></tr>'''
 
 def tableend():
-    return '</tbody></table>'
+    return '''</tbody></table>
+    <script>$(document).ready( function () { $('#myTable').DataTable({
+        paging: false
+    }); } );</script>'''
 
 def writefile(nameandpath, data):
     f = open(nameandpath, "w")
@@ -111,7 +108,8 @@ def makegraph():
             file1Y.append(entry["y"])
         data_points = [{"x": x, "y": y} for x,y in zip(file1X,file1Y)]
         datasets.append({"label": f"{str(PTS_DIR)[1:]} jsonAlt", "data": data_points, "borderColor": colors[0], "backgroundColor": colors[0], "tension": 0.0, "pointRadius": 3})
-        file1subpagehtml+=f'<label for="ptsjsonalt">{file1}</label> <div class="box" id="ptsjsonalt">{file1txtdata}</div>'
+        file1subpagehtml+=f'<label for="ptsjsonalt"></label> <div class="box" id="ptsjsonalt">{file1txtdata}</div>'
+        # file1subpagehtml+=f'<label for="ptsjsonalt">{file1}</label> <div class="box" id="ptsjsonalt">{file1txtdata}</div>'
 
     if file2 != '':
         title=(file2.stem)
@@ -124,7 +122,8 @@ def makegraph():
             file2Y.append(entry["y"])
         data_points = [{"x": x, "y": y} for x,y in zip(file2X,file2Y)]
         datasets.append({"label": f"{str(PTS_DIR)[1:]} json", "data": data_points, "borderColor": colors[1], "backgroundColor": colors[1], "tension": 0.0, "pointRadius": 3})
-        file2subpagehtml+=f'<label for="ptsjson">{file2}</label> <div class="box" id="ptsjson">{file2txtdata}</div>'
+        file2subpagehtml+=f'<label for="ptsjson"></label> <div class="box" id="ptsjson">{file2txtdata}</div>'
+        # file2subpagehtml+=f'<label for="ptsjson">{file2}</label> <div class="box" id="ptsjson">{file2txtdata}</div>'
 
     if file3 != '':
         title=(file3.stem)
@@ -137,7 +136,8 @@ def makegraph():
             file3Y.append(entry["y"])
         data_points = [{"x": x, "y": y} for x,y in zip(file3X,file3Y)]
         datasets.append({"label": f"{str(LIVE_DIR)[1:]} jsonAlt", "data": data_points, "borderColor": colors[2], "backgroundColor": colors[2], "tension": 0.0, "pointRadius": 3})
-        file3subpagehtml+=f'<label for="Livejsonalt">{file3}</label> <div class="box" id="Livejsonalt">{file3txtdata}</div>'
+        file3subpagehtml+=f'<label for="Livejsonalt"></label> <div class="box" id="Livejsonalt">{file3txtdata}</div>'
+        # file3subpagehtml+=f'<label for="Livejsonalt">{file3}</label> <div class="box" id="Livejsonalt">{file3txtdata}</div>'
 
     if file4 != '':
         title=(file4.stem)
@@ -150,7 +150,8 @@ def makegraph():
             file4Y.append(entry["y"]) 
         data_points = [{"x": x, "y": y} for x,y in zip(file4X,file4Y)]
         datasets.append({"label": f"{str(LIVE_DIR)[1:]} json", "data": data_points, "borderColor": colors[3], "backgroundColor": colors[3], "tension": 0.0, "pointRadius": 3})
-        file4subpagehtml+=f'<label for="Livejson">{file4}</label> <div class="box" id="Livejson">{file4txtdata}</div>'
+        file4subpagehtml+=f'<label for="Livejson"></label> <div class="box" id="Livejson">{file4txtdata}</div>'
+        # file4subpagehtml+=f'<label for="Livejson">{file4}</label> <div class="box" id="Livejson">{file4txtdata}</div>'
 
     # Build HTML page with Chart.js
     savePath=OUTPUT_DIR+pathtmp+"/"
@@ -169,8 +170,9 @@ def makegraph():
     datasets_json = json.dumps(datasets)
     chart_html = ''
     chart_html += htmlheader(title) + "\n"
+    chart_html += f'<h2 class="center">{title}</h2>\n'
     chart_html += '<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>\n'
-    chart_html += '<div style="width:900px; max-width:100%;">\n'
+    chart_html += '<div class="plot">\n'
     chart_html += f'  <canvas id="{canvas_id}"></canvas>\n'
     chart_html += '</div>\n'
     chart_html += '<script>\n'
@@ -179,8 +181,9 @@ def makegraph():
     chart_html += "new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });\n"
     chart_html += '</script>\n'
     chart_html += '<p>\n'
-    chart_html += '<table><tr><td>' + file1subpagehtml + '</td><td>' + file2subpagehtml + '</td></tr>\n'
-    chart_html += '<tr><td>' + file3subpagehtml + '</td><td>' + file4subpagehtml + '</td></tr></table>\n'
+    chart_html += '<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>\n'
+    chart_html += '<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt">' + file1subpagehtml + '</td><td class="sub ptsjson">' + file2subpagehtml + '</td></tr>\n'
+    chart_html += '<tr><td class="sub">Live</td><td class="sub livejsonalt">' + file3subpagehtml + '</td><td class="sub livejson">' + file4subpagehtml + '</td></tr></tbody></table>\n'
     chart_html += htmlfooter() + '\n'
     writefile(savePath+saveName, chart_html)
 

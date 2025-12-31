@@ -1,11 +1,11 @@
 <!DOCTYPE html> <html lang="en"> 
 <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
 <title>weap_mom_bladeofbastetarmorpen</title> 
-<script src="sortable.min.js"></script>
-<link rel="stylesheet" href="sortable-theme-minimal.css" />
-<link rel="stylesheet" href="/76CurveTables/styles.css"> </head> <body>
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">weap_mom_bladeofbastetarmorpen</h2>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div style="width:900px; max-width:100%;">
+<div class="plot">
   <canvas id="chart_weap_mom_bladeofbastetarmorpen"></canvas>
 </div>
 <script>
@@ -14,6 +14,7 @@ const ctx = document.getElementById('chart_weap_mom_bladeofbastetarmorpen').getC
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
-<table><tr><td></td><td><label for="ptsjson">json/PTS_P66.0_18Dec/misc/curvetables/json/weapons/melee/weap_mom_bladeofbastetarmorpen.json</label> <div class="box" id="ptsjson">x = 0, y = 50<br>x = 1, y = 100<br></div></td></tr>
-<tr><td></td><td><label for="Livejson">json/Live_P64.01/misc/curvetables/json/weapons/melee/weap_mom_bladeofbastetarmorpen.json</label> <div class="box" id="Livejson">x = 0, y = 50<br>x = 1, y = 100<br></div></td></tr></table>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 50<br>x = 1, y = 100<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 0, y = 50<br>x = 1, y = 100<br></div></td></tr></tbody></table>
 </body> </html>

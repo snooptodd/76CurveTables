@@ -9,12 +9,12 @@
   <canvas id="chart_armor_cavalier"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0.0, "y": 1}, {"x": 1, "y": 0.94}, {"x": 2, "y": 0.88}, {"x": 3, "y": 0.83}, {"x": 4, "y": 0.78}, {"x": 5, "y": 0.73}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0.0, "y": 1}, {"x": 1, "y": 0.9}, {"x": 2, "y": 0.81}, {"x": 3, "y": 0.729}, {"x": 4, "y": 0.6561}, {"x": 5, "y": 0.59049}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_armor_cavalier').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
 <table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
-<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0.0, y = 1<br>x = 1, y = 0.94<br>x = 2, y = 0.88<br>x = 3, y = 0.83<br>x = 4, y = 0.78<br>x = 5, y = 0.73<br></div></td></tr>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0.0, y = 1<br>x = 1, y = 0.9<br>x = 2, y = 0.81<br>x = 3, y = 0.729<br>x = 4, y = 0.6561<br>x = 5, y = 0.59049<br></div></td></tr>
 <tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
 </body> </html>

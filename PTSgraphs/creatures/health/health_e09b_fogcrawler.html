@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>health_e09b_fogcrawler</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">health_e09b_fogcrawler</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_health_e09b_fogcrawler"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 27, "y": 1638}, {"x": 39, "y": 2646}, {"x": 51, "y": 3969}, {"x": 63, "y": 4473}, {"x": 75, "y": 4977}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 27, "y": 1638}, {"x": 39, "y": 2646}, {"x": 51, "y": 3969}, {"x": 63, "y": 4473}, {"x": 75, "y": 4977}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_health_e09b_fogcrawler').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 27, y = 1638<br>x = 39, y = 2646<br>x = 51, y = 3969<br>x = 63, y = 4473<br>x = 75, y = 4977<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 27, y = 1638<br>x = 39, y = 2646<br>x = 51, y = 3969<br>x = 63, y = 4473<br>x = 75, y = 4977<br></div></td></tr></tbody></table>
+</body> </html>

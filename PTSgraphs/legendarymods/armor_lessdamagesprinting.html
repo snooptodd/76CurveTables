@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>armor_lessdamagesprinting</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">armor_lessdamagesprinting</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_armor_lessdamagesprinting"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0, "y": 0}, {"x": 5, "y": 0.95}, {"x": 10, "y": 0.9025}, {"x": 15, "y": 0.8574}, {"x": 20, "y": 0.8145}, {"x": 25, "y": 0.7737}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 0, "y": 0}, {"x": 5, "y": 0.95}, {"x": 10, "y": 0.9025}, {"x": 15, "y": 0.8574}, {"x": 20, "y": 0.8145}, {"x": 25, "y": 0.7737}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_lessdamagesprinting').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 0<br>x = 5, y = 0.95<br>x = 10, y = 0.9025<br>x = 15, y = 0.8574<br>x = 20, y = 0.8145<br>x = 25, y = 0.7737<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 0, y = 0<br>x = 5, y = 0.95<br>x = 10, y = 0.9025<br>x = 15, y = 0.8574<br>x = 20, y = 0.8145<br>x = 25, y = 0.7737<br></div></td></tr></tbody></table>
+</body> </html>

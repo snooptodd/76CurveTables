@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>armor_vanguard_05</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">armor_vanguard_05</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_armor_vanguard_05"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0, "y": 1.0}, {"x": 650, "y": 0.99}, {"x": 750, "y": 0.94}, {"x": 850, "y": 0.83}, {"x": 900, "y": 0.76}, {"x": 950, "y": 0.73}, {"x": 1000, "y": 0.73}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 0, "y": 1.0}, {"x": 650, "y": 0.99}, {"x": 750, "y": 0.94}, {"x": 850, "y": 0.83}, {"x": 900, "y": 0.76}, {"x": 950, "y": 0.73}, {"x": 1000, "y": 0.73}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_vanguard_05').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 1.0<br>x = 650, y = 0.99<br>x = 750, y = 0.94<br>x = 850, y = 0.83<br>x = 900, y = 0.76<br>x = 950, y = 0.73<br>x = 1000, y = 0.73<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 0, y = 1.0<br>x = 650, y = 0.99<br>x = 750, y = 0.94<br>x = 850, y = 0.83<br>x = 900, y = 0.76<br>x = 950, y = 0.73<br>x = 1000, y = 0.73<br></div></td></tr></tbody></table>
+</body> </html>

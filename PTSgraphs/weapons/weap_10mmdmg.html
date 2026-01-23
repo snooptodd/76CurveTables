@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>weap_10mmdmg</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">weap_10mmdmg</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_weap_10mmdmg"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 1, "y": 15}, {"x": 5, "y": 17}, {"x": 10, "y": 19}, {"x": 15, "y": 22}, {"x": 20, "y": 24}, {"x": 25, "y": 27}, {"x": 30, "y": 31}, {"x": 35, "y": 35}, {"x": 40, "y": 39}, {"x": 45, "y": 45}, {"x": 50, "y": 50}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 1, "y": 15}, {"x": 5, "y": 17}, {"x": 10, "y": 19}, {"x": 15, "y": 22}, {"x": 20, "y": 24}, {"x": 25, "y": 27}, {"x": 30, "y": 31}, {"x": 35, "y": 35}, {"x": 40, "y": 39}, {"x": 45, "y": 45}, {"x": 50, "y": 50}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_weap_10mmdmg').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 15<br>x = 5, y = 17<br>x = 10, y = 19<br>x = 15, y = 22<br>x = 20, y = 24<br>x = 25, y = 27<br>x = 30, y = 31<br>x = 35, y = 35<br>x = 40, y = 39<br>x = 45, y = 45<br>x = 50, y = 50<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = 15<br>x = 5, y = 17<br>x = 10, y = 19<br>x = 15, y = 22<br>x = 20, y = 24<br>x = 25, y = 27<br>x = 30, y = 31<br>x = 35, y = 35<br>x = 40, y = 39<br>x = 45, y = 45<br>x = 50, y = 50<br></div></td></tr></tbody></table>
+</body> </html>

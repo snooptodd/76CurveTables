@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>health_highwaytownsettlerssettler</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">health_highwaytownsettlerssettler</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_health_highwaytownsettlerssettler"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 1, "y": 54}, {"x": 4, "y": 70}, {"x": 7, "y": 85}, {"x": 9, "y": 93}, {"x": 14, "y": 163}, {"x": 21, "y": 221}, {"x": 30, "y": 312}, {"x": 39, "y": 430}, {"x": 50, "y": 550}, {"x": 100, "y": 1111}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 1, "y": 54}, {"x": 4, "y": 70}, {"x": 7, "y": 85}, {"x": 9, "y": 93}, {"x": 14, "y": 163}, {"x": 21, "y": 221}, {"x": 30, "y": 312}, {"x": 39, "y": 430}, {"x": 50, "y": 550}, {"x": 100, "y": 1111}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_health_highwaytownsettlerssettler').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 54<br>x = 4, y = 70<br>x = 7, y = 85<br>x = 9, y = 93<br>x = 14, y = 163<br>x = 21, y = 221<br>x = 30, y = 312<br>x = 39, y = 430<br>x = 50, y = 550<br>x = 100, y = 1111<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = 54<br>x = 4, y = 70<br>x = 7, y = 85<br>x = 9, y = 93<br>x = 14, y = 163<br>x = 21, y = 221<br>x = 30, y = 312<br>x = 39, y = 430<br>x = 50, y = 550<br>x = 100, y = 1111<br></div></td></tr></tbody></table>
+</body> </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>armor_floater_dr</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">armor_floater_dr</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_armor_floater_dr"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 1, "y": 10}, {"x": 4, "y": 30}, {"x": 7, "y": 45}, {"x": 11, "y": 90}, {"x": 15, "y": 120}, {"x": 21, "y": 160}, {"x": 28, "y": 190}, {"x": 35, "y": 250}, {"x": 47, "y": 280}, {"x": 59, "y": 300}, {"x": 73, "y": 300}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 1, "y": 10}, {"x": 4, "y": 30}, {"x": 7, "y": 45}, {"x": 11, "y": 90}, {"x": 15, "y": 120}, {"x": 21, "y": 160}, {"x": 28, "y": 190}, {"x": 35, "y": 250}, {"x": 47, "y": 280}, {"x": 59, "y": 300}, {"x": 73, "y": 300}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_floater_dr').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 10<br>x = 4, y = 30<br>x = 7, y = 45<br>x = 11, y = 90<br>x = 15, y = 120<br>x = 21, y = 160<br>x = 28, y = 190<br>x = 35, y = 250<br>x = 47, y = 280<br>x = 59, y = 300<br>x = 73, y = 300<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = 10<br>x = 4, y = 30<br>x = 7, y = 45<br>x = 11, y = 90<br>x = 15, y = 120<br>x = 21, y = 160<br>x = 28, y = 190<br>x = 35, y = 250<br>x = 47, y = 280<br>x = 59, y = 300<br>x = 73, y = 300<br></div></td></tr></tbody></table>
+</body> </html>

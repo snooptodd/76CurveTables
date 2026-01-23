@@ -9,7 +9,7 @@
   <canvas id="chart_stash_cost_caps"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 100}, {"x": 2, "y": 200}, {"x": 3, "y": 300}, {"x": 4, "y": 400}, {"x": 5, "y": 500}, {"x": 6, "y": 600}, {"x": 7, "y": 700}, {"x": 8, "y": 800}, {"x": 50, "y": 5000}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 100}, {"x": 2, "y": 200}, {"x": 3, "y": 300}, {"x": 4, "y": 400}, {"x": 5, "y": 500}, {"x": 6, "y": 600}, {"x": 7, "y": 700}, {"x": 8, "y": 800}, {"x": 50, "y": 5000}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 100}, {"x": 2, "y": 200}, {"x": 3, "y": 300}, {"x": 4, "y": 400}, {"x": 5, "y": 500}, {"x": 6, "y": 600}, {"x": 7, "y": 700}, {"x": 8, "y": 800}, {"x": 50, "y": 5000}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 0, "y": 0}, {"x": 1, "y": 100}, {"x": 2, "y": 200}, {"x": 3, "y": 300}, {"x": 4, "y": 400}, {"x": 5, "y": 500}, {"x": 6, "y": 600}, {"x": 7, "y": 700}, {"x": 8, "y": 800}, {"x": 50, "y": 5000}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_stash_cost_caps').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

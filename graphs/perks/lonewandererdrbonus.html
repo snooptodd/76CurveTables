@@ -9,7 +9,7 @@
   <canvas id="chart_lonewandererdrbonus"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.0_18Dec json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P64.01 json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_lonewandererdrbonus').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

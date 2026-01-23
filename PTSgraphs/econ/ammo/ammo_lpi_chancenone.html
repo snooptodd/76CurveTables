@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>ammo_lpi_chancenone</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">ammo_lpi_chancenone</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_ammo_lpi_chancenone"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0, "y": 100}, {"x": 1, "y": 60}, {"x": 5, "y": 50}, {"x": 10, "y": 40}, {"x": 15, "y": 30}, {"x": 20, "y": 20}, {"x": 25, "y": 10}, {"x": 30, "y": 10}, {"x": 99, "y": 10}, {"x": 100, "y": 0}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "PTS_P66.01_16Jan json", "data": [{"x": 0, "y": 100}, {"x": 1, "y": 60}, {"x": 5, "y": 50}, {"x": 10, "y": 40}, {"x": 15, "y": 30}, {"x": 20, "y": 20}, {"x": 25, "y": 10}, {"x": 30, "y": 10}, {"x": 99, "y": 10}, {"x": 100, "y": 0}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_ammo_lpi_chancenone').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 100<br>x = 1, y = 60<br>x = 5, y = 50<br>x = 10, y = 40<br>x = 15, y = 30<br>x = 20, y = 20<br>x = 25, y = 10<br>x = 30, y = 10<br>x = 99, y = 10<br>x = 100, y = 0<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 0, y = 100<br>x = 1, y = 60<br>x = 5, y = 50<br>x = 10, y = 40<br>x = 15, y = 30<br>x = 20, y = 20<br>x = 25, y = 10<br>x = 30, y = 10<br>x = 99, y = 10<br>x = 100, y = 0<br></div></td></tr></tbody></table>
+</body> </html>

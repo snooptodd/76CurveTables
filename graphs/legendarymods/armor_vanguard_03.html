@@ -9,12 +9,12 @@
   <canvas id="chart_armor_vanguard_03"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0, "y": 1.0}, {"x": 650, "y": 0.99}, {"x": 750, "y": 0.96}, {"x": 850, "y": 0.9}, {"x": 900, "y": 0.85}, {"x": 950, "y": 0.83}, {"x": 1000, "y": 0.93}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 0, "y": 1}, {"x": 100, "y": 0.997}, {"x": 136, "y": 0.996}, {"x": 185, "y": 0.995}, {"x": 252, "y": 0.993}, {"x": 342, "y": 0.989}, {"x": 465, "y": 0.979}, {"x": 633, "y": 0.95}, {"x": 861, "y": 0.839}, {"x": 1000, "y": 0.831}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_armor_vanguard_03').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
 <table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
-<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 1.0<br>x = 650, y = 0.99<br>x = 750, y = 0.96<br>x = 850, y = 0.9<br>x = 900, y = 0.85<br>x = 950, y = 0.83<br>x = 1000, y = 0.93<br></div></td></tr>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 1<br>x = 100, y = 0.997<br>x = 136, y = 0.996<br>x = 185, y = 0.995<br>x = 252, y = 0.993<br>x = 342, y = 0.989<br>x = 465, y = 0.979<br>x = 633, y = 0.95<br>x = 861, y = 0.839<br>x = 1000, y = 0.831<br></div></td></tr>
 <tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
 </body> </html>

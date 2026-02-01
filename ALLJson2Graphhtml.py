@@ -22,7 +22,7 @@ import filecmp
 DEBUG=False
 ROOT_DIR='./json'
 LIVE_DIR='/Live_P65.0'
-PTS_DIR='/PTS_P66.02_23Jan'
+PTS_DIR='/PTS_P66.03_30Jan'
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME='*.json'
 OUTPUT_DIR='./graphs'

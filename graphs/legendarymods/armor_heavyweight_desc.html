@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>armor_heavyweight_desc</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">armor_heavyweight_desc</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_armor_heavyweight_desc"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 0, "y": 0}, {"x": 0.1, "y": 0.65}, {"x": 0.28, "y": 0.94}, {"x": 0.46, "y": 1.37}, {"x": 0.64, "y": 1.98}, {"x": 0.82, "y": 2.87}, {"x": 1, "y": 4.17}, {"x": 1.18, "y": 6.04}, {"x": 1.36, "y": 8.76}, {"x": 1.5, "y": 10}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_heavyweight_desc').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 0<br>x = 0.1, y = 0.65<br>x = 0.28, y = 0.94<br>x = 0.46, y = 1.37<br>x = 0.64, y = 1.98<br>x = 0.82, y = 2.87<br>x = 1, y = 4.17<br>x = 1.18, y = 6.04<br>x = 1.36, y = 8.76<br>x = 1.5, y = 10<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
+</body> </html>

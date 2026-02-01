@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>armor_lucid_05</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">armor_lucid_05</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_armor_lucid_05"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 0, "y": 1}, {"x": 1, "y": 0.981}, {"x": 2, "y": 0.971}, {"x": 3, "y": 0.958}, {"x": 4, "y": 0.938}, {"x": 5, "y": 0.91}, {"x": 6, "y": 0.869}, {"x": 7, "y": 0.811}, {"x": 8, "y": 0.734}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_armor_lucid_05').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 1<br>x = 1, y = 0.981<br>x = 2, y = 0.971<br>x = 3, y = 0.958<br>x = 4, y = 0.938<br>x = 5, y = 0.91<br>x = 6, y = 0.869<br>x = 7, y = 0.811<br>x = 8, y = 0.734<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
+</body> </html>

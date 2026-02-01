@@ -9,12 +9,12 @@
   <canvas id="chart_armor_mutant"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.02_23Jan json", "data": [{"x": 0.0, "y": 1}, {"x": 1, "y": 0.95}, {"x": 2, "y": 0.9}, {"x": 3, "y": 0.86}, {"x": 4, "y": 0.81}, {"x": 5, "y": 0.77}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 0, "y": 1}, {"x": 1, "y": 0.998}, {"x": 2, "y": 0.995}, {"x": 3, "y": 0.993}, {"x": 4, "y": 0.99}, {"x": 5, "y": 0.988}, {"x": 6, "y": 0.984}, {"x": 7, "y": 0.98}, {"x": 8, "y": 0.975}, {"x": 9, "y": 0.968}, {"x": 10, "y": 0.96}, {"x": 11, "y": 0.955}, {"x": 12, "y": 0.953}, {"x": 13, "y": 0.952}, {"x": 14, "y": 0.951}, {"x": 15, "y": 0.951}, {"x": 16, "y": 0.95}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_armor_mutant').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
 <table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
-<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0.0, y = 1<br>x = 1, y = 0.95<br>x = 2, y = 0.9<br>x = 3, y = 0.86<br>x = 4, y = 0.81<br>x = 5, y = 0.77<br></div></td></tr>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 1<br>x = 1, y = 0.998<br>x = 2, y = 0.995<br>x = 3, y = 0.993<br>x = 4, y = 0.99<br>x = 5, y = 0.988<br>x = 6, y = 0.984<br>x = 7, y = 0.98<br>x = 8, y = 0.975<br>x = 9, y = 0.968<br>x = 10, y = 0.96<br>x = 11, y = 0.955<br>x = 12, y = 0.953<br>x = 13, y = 0.952<br>x = 14, y = 0.951<br>x = 15, y = 0.951<br>x = 16, y = 0.95<br></div></td></tr>
 <tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
 </body> </html>

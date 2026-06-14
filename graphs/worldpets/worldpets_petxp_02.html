@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>worldpets_petxp_02</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">worldpets_petxp_02</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_worldpets_petxp_02"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 0}, {"x": 2, "y": 210}, {"x": 5, "y": 250}, {"x": 10, "y": 300}, {"x": 15, "y": 350}, {"x": 20, "y": 400}, {"x": 25, "y": 450}, {"x": 30, "y": 500}, {"x": 35, "y": 550}, {"x": 40, "y": 600}, {"x": 45, "y": 650}, {"x": 50, "y": 700}, {"x": 55, "y": 775}, {"x": 60, "y": 850}, {"x": 65, "y": 925}, {"x": 70, "y": 1000}, {"x": 75, "y": 1075}, {"x": 80, "y": 1150}, {"x": 85, "y": 1225}, {"x": 90, "y": 1300}, {"x": 95, "y": 1375}, {"x": 100, "y": 1450}, {"x": 105, "y": 1525}, {"x": 110, "y": 1600}, {"x": 115, "y": 1675}, {"x": 120, "y": 1750}, {"x": 125, "y": 1825}, {"x": 130, "y": 1900}, {"x": 135, "y": 1975}, {"x": 140, "y": 2050}, {"x": 145, "y": 2125}, {"x": 150, "y": 2200}, {"x": 155, "y": 2300}, {"x": 160, "y": 2400}, {"x": 165, "y": 2500}, {"x": 170, "y": 2600}, {"x": 175, "y": 2700}, {"x": 180, "y": 2800}, {"x": 185, "y": 2900}, {"x": 190, "y": 3000}, {"x": 195, "y": 3100}, {"x": 200, "y": 3200}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_worldpets_petxp_02').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 0<br>x = 2, y = 210<br>x = 5, y = 250<br>x = 10, y = 300<br>x = 15, y = 350<br>x = 20, y = 400<br>x = 25, y = 450<br>x = 30, y = 500<br>x = 35, y = 550<br>x = 40, y = 600<br>x = 45, y = 650<br>x = 50, y = 700<br>x = 55, y = 775<br>x = 60, y = 850<br>x = 65, y = 925<br>x = 70, y = 1000<br>x = 75, y = 1075<br>x = 80, y = 1150<br>x = 85, y = 1225<br>x = 90, y = 1300<br>x = 95, y = 1375<br>x = 100, y = 1450<br>x = 105, y = 1525<br>x = 110, y = 1600<br>x = 115, y = 1675<br>x = 120, y = 1750<br>x = 125, y = 1825<br>x = 130, y = 1900<br>x = 135, y = 1975<br>x = 140, y = 2050<br>x = 145, y = 2125<br>x = 150, y = 2200<br>x = 155, y = 2300<br>x = 160, y = 2400<br>x = 165, y = 2500<br>x = 170, y = 2600<br>x = 175, y = 2700<br>x = 180, y = 2800<br>x = 185, y = 2900<br>x = 190, y = 3000<br>x = 195, y = 3100<br>x = 200, y = 3200<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
+</body> </html>

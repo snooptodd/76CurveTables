@@ -9,7 +9,7 @@
   <canvas id="chart_foodhealth_basicvegetable"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 1, "y": 50}, {"x": 2, "y": 75}, {"x": 5, "y": 100}, {"x": 7, "y": 150}, {"x": 10, "y": 200}, {"x": 15, "y": 200}, {"x": 20, "y": 200}, {"x": 25, "y": 200}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 1, "y": 50}, {"x": 2, "y": 75}, {"x": 5, "y": 100}, {"x": 7, "y": 150}, {"x": 10, "y": 200}, {"x": 15, "y": 200}, {"x": 20, "y": 200}, {"x": 25, "y": 200}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 50}, {"x": 2, "y": 75}, {"x": 5, "y": 100}, {"x": 7, "y": 150}, {"x": 10, "y": 200}, {"x": 15, "y": 200}, {"x": 20, "y": 200}, {"x": 25, "y": 200}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 1, "y": 50}, {"x": 2, "y": 75}, {"x": 5, "y": 100}, {"x": 7, "y": 150}, {"x": 10, "y": 200}, {"x": 15, "y": 200}, {"x": 20, "y": 200}, {"x": 25, "y": 200}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_foodhealth_basicvegetable').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

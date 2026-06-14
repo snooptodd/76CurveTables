@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>worldpets_petprowess_damage2</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">worldpets_petprowess_damage2</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_worldpets_petprowess_damage2"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 121}, {"x": 5, "y": 125}, {"x": 10, "y": 131}, {"x": 15, "y": 137}, {"x": 20, "y": 143}, {"x": 25, "y": 150}, {"x": 30, "y": 157}, {"x": 35, "y": 164}, {"x": 40, "y": 171}, {"x": 45, "y": 179}, {"x": 50, "y": 187}, {"x": 55, "y": 195}, {"x": 60, "y": 204}, {"x": 65, "y": 213}, {"x": 70, "y": 223}, {"x": 75, "y": 233}, {"x": 80, "y": 244}, {"x": 85, "y": 255}, {"x": 90, "y": 266}, {"x": 95, "y": 278}, {"x": 100, "y": 291}, {"x": 105, "y": 304}, {"x": 110, "y": 318}, {"x": 115, "y": 332}, {"x": 120, "y": 347}, {"x": 125, "y": 363}, {"x": 130, "y": 379}, {"x": 135, "y": 397}, {"x": 140, "y": 415}, {"x": 145, "y": 433}, {"x": 150, "y": 453}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_worldpets_petprowess_damage2').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 121<br>x = 5, y = 125<br>x = 10, y = 131<br>x = 15, y = 137<br>x = 20, y = 143<br>x = 25, y = 150<br>x = 30, y = 157<br>x = 35, y = 164<br>x = 40, y = 171<br>x = 45, y = 179<br>x = 50, y = 187<br>x = 55, y = 195<br>x = 60, y = 204<br>x = 65, y = 213<br>x = 70, y = 223<br>x = 75, y = 233<br>x = 80, y = 244<br>x = 85, y = 255<br>x = 90, y = 266<br>x = 95, y = 278<br>x = 100, y = 291<br>x = 105, y = 304<br>x = 110, y = 318<br>x = 115, y = 332<br>x = 120, y = 347<br>x = 125, y = 363<br>x = 130, y = 379<br>x = 135, y = 397<br>x = 140, y = 415<br>x = 145, y = 433<br>x = 150, y = 453<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
+</body> </html>

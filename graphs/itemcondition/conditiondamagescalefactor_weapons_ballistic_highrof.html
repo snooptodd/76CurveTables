@@ -9,7 +9,7 @@
   <canvas id="chart_conditiondamagescalefactor_weapons_ballistic_highrof"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 1, "y": 0.022}, {"x": 4, "y": 0.019}, {"x": 8, "y": 0.013}, {"x": 12, "y": 0.009}, {"x": 15, "y": 0.007}, {"x": 30, "y": 0.003}, {"x": 40, "y": 0.003}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 1, "y": 0.022}, {"x": 4, "y": 0.019}, {"x": 8, "y": 0.013}, {"x": 12, "y": 0.009}, {"x": 15, "y": 0.007}, {"x": 30, "y": 0.003}, {"x": 40, "y": 0.003}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 0.022}, {"x": 4, "y": 0.019}, {"x": 8, "y": 0.013}, {"x": 12, "y": 0.009}, {"x": 15, "y": 0.007}, {"x": 30, "y": 0.003}, {"x": 40, "y": 0.003}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 1, "y": 0.022}, {"x": 4, "y": 0.019}, {"x": 8, "y": 0.013}, {"x": 12, "y": 0.009}, {"x": 15, "y": 0.007}, {"x": 30, "y": 0.003}, {"x": 40, "y": 0.003}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_conditiondamagescalefactor_weapons_ballistic_highrof').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

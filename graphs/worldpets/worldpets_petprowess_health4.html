@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>worldpets_petprowess_health4</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">worldpets_petprowess_health4</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_worldpets_petprowess_health4"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 7922}, {"x": 5, "y": 13133}, {"x": 10, "y": 19755}, {"x": 15, "y": 26512}, {"x": 20, "y": 33423}, {"x": 25, "y": 40509}, {"x": 30, "y": 47791}, {"x": 35, "y": 55298}, {"x": 40, "y": 63059}, {"x": 45, "y": 71107}, {"x": 50, "y": 79483}, {"x": 55, "y": 88230}, {"x": 60, "y": 97396}, {"x": 65, "y": 107040}, {"x": 70, "y": 117224}, {"x": 75, "y": 128022}, {"x": 80, "y": 139515}, {"x": 85, "y": 151798}, {"x": 90, "y": 164975}, {"x": 95, "y": 179167}, {"x": 100, "y": 194510}, {"x": 105, "y": 211159}, {"x": 110, "y": 229288}, {"x": 115, "y": 249097}, {"x": 120, "y": 270810}, {"x": 125, "y": 294683}, {"x": 130, "y": 321007}, {"x": 135, "y": 350109}, {"x": 140, "y": 382362}, {"x": 145, "y": 418190}, {"x": 150, "y": 458072}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_worldpets_petprowess_health4').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 7922<br>x = 5, y = 13133<br>x = 10, y = 19755<br>x = 15, y = 26512<br>x = 20, y = 33423<br>x = 25, y = 40509<br>x = 30, y = 47791<br>x = 35, y = 55298<br>x = 40, y = 63059<br>x = 45, y = 71107<br>x = 50, y = 79483<br>x = 55, y = 88230<br>x = 60, y = 97396<br>x = 65, y = 107040<br>x = 70, y = 117224<br>x = 75, y = 128022<br>x = 80, y = 139515<br>x = 85, y = 151798<br>x = 90, y = 164975<br>x = 95, y = 179167<br>x = 100, y = 194510<br>x = 105, y = 211159<br>x = 110, y = 229288<br>x = 115, y = 249097<br>x = 120, y = 270810<br>x = 125, y = 294683<br>x = 130, y = 321007<br>x = 135, y = 350109<br>x = 140, y = 382362<br>x = 145, y = 418190<br>x = 150, y = 458072<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
+</body> </html>

@@ -9,12 +9,12 @@
   <canvas id="chart_armor_vanguard_05"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 0, "y": 1}, {"x": 100, "y": 0.995}, {"x": 136, "y": 0.994}, {"x": 185, "y": 0.992}, {"x": 252, "y": 0.989}, {"x": 342, "y": 0.982}, {"x": 465, "y": 0.965}, {"x": 633, "y": 0.918}, {"x": 861, "y": 0.747}, {"x": 1000, "y": 0.734}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 0, "y": 1}, {"x": 100, "y": 0.995}, {"x": 136, "y": 0.994}, {"x": 185, "y": 0.992}, {"x": 252, "y": 0.989}, {"x": 342, "y": 0.982}, {"x": 465, "y": 0.965}, {"x": 633, "y": 0.918}, {"x": 861, "y": 0.747}, {"x": 1000, "y": 0.734}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 0, "y": 1}, {"x": 100, "y": 0.995}, {"x": 136, "y": 0.994}, {"x": 185, "y": 0.992}, {"x": 252, "y": 0.989}, {"x": 342, "y": 0.982}, {"x": 465, "y": 0.965}, {"x": 633, "y": 0.918}, {"x": 861, "y": 0.747}, {"x": 1000, "y": 0.734}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_armor_vanguard_05').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
 <table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
 <tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0, y = 1<br>x = 100, y = 0.995<br>x = 136, y = 0.994<br>x = 185, y = 0.992<br>x = 252, y = 0.989<br>x = 342, y = 0.982<br>x = 465, y = 0.965<br>x = 633, y = 0.918<br>x = 861, y = 0.747<br>x = 1000, y = 0.734<br></div></td></tr>
-<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"></td></tr></tbody></table>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 0, y = 1<br>x = 100, y = 0.995<br>x = 136, y = 0.994<br>x = 185, y = 0.992<br>x = 252, y = 0.989<br>x = 342, y = 0.982<br>x = 465, y = 0.965<br>x = 633, y = 0.918<br>x = 861, y = 0.747<br>x = 1000, y = 0.734<br></div></td></tr></tbody></table>
 </body> </html>

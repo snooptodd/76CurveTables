@@ -9,7 +9,7 @@
   <canvas id="chart_tier_protectron"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 1, "y": 5}, {"x": 2, "y": 14}, {"x": 3, "y": 26}, {"x": 4, "y": 36}, {"x": 5, "y": 100}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 1, "y": 5}, {"x": 2, "y": 14}, {"x": 3, "y": 26}, {"x": 4, "y": 36}, {"x": 5, "y": 100}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 5}, {"x": 2, "y": 14}, {"x": 3, "y": 26}, {"x": 4, "y": 36}, {"x": 5, "y": 100}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 1, "y": 5}, {"x": 2, "y": 14}, {"x": 3, "y": 26}, {"x": 4, "y": 36}, {"x": 5, "y": 100}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_tier_protectron').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

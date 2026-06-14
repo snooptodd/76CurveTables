@@ -1,0 +1,20 @@
+<!DOCTYPE html> <html lang="en"> 
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> 	
+<title>weapon_tarnished_dmg</title> 
+<link rel="stylesheet" href="/76CurveTables/styles.css">
+ </head> <body>
+<h2 class="center">weapon_tarnished_dmg</h2>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="plot">
+  <canvas id="chart_weapon_tarnished_dmg"></canvas>
+</div>
+<script>
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 0.0, "y": 0}, {"x": 0.01, "y": 120}, {"x": 0.05, "y": 114}, {"x": 0.1, "y": 108}, {"x": 0.15, "y": 102}, {"x": 0.2, "y": 96}, {"x": 0.25, "y": 90}, {"x": 0.3, "y": 84}, {"x": 0.35, "y": 78}, {"x": 0.4, "y": 72}, {"x": 0.45, "y": 66}, {"x": 0.5, "y": 60}, {"x": 0.55, "y": 54}, {"x": 0.6, "y": 48}, {"x": 0.65, "y": 42}, {"x": 0.7, "y": 36}, {"x": 0.75, "y": 30}, {"x": 0.8, "y": 24}, {"x": 0.85, "y": 18}, {"x": 0.9, "y": 12}, {"x": 0.95, "y": 6}, {"x": 0.99, "y": 1}, {"x": 1.0, "y": 0}, {"x": 2.0, "y": 0}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 0.0, "y": 0}, {"x": 0.01, "y": 120}, {"x": 0.05, "y": 114}, {"x": 0.1, "y": 108}, {"x": 0.15, "y": 102}, {"x": 0.2, "y": 96}, {"x": 0.25, "y": 90}, {"x": 0.3, "y": 84}, {"x": 0.35, "y": 78}, {"x": 0.4, "y": 72}, {"x": 0.45, "y": 66}, {"x": 0.5, "y": 60}, {"x": 0.55, "y": 54}, {"x": 0.6, "y": 48}, {"x": 0.65, "y": 42}, {"x": 0.7, "y": 36}, {"x": 0.75, "y": 30}, {"x": 0.8, "y": 24}, {"x": 0.85, "y": 18}, {"x": 0.9, "y": 12}, {"x": 0.95, "y": 6}, {"x": 0.99, "y": 1}, {"x": 1.0, "y": 0}, {"x": 2.0, "y": 0}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const ctx = document.getElementById('chart_weapon_tarnished_dmg').getContext('2d');
+new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
+</script>
+<p>
+<table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 0.0, y = 0<br>x = 0.01, y = 120<br>x = 0.05, y = 114<br>x = 0.1, y = 108<br>x = 0.15, y = 102<br>x = 0.2, y = 96<br>x = 0.25, y = 90<br>x = 0.3, y = 84<br>x = 0.35, y = 78<br>x = 0.4, y = 72<br>x = 0.45, y = 66<br>x = 0.5, y = 60<br>x = 0.55, y = 54<br>x = 0.6, y = 48<br>x = 0.65, y = 42<br>x = 0.7, y = 36<br>x = 0.75, y = 30<br>x = 0.8, y = 24<br>x = 0.85, y = 18<br>x = 0.9, y = 12<br>x = 0.95, y = 6<br>x = 0.99, y = 1<br>x = 1.0, y = 0<br>x = 2.0, y = 0<br></div></td></tr>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 0.0, y = 0<br>x = 0.01, y = 120<br>x = 0.05, y = 114<br>x = 0.1, y = 108<br>x = 0.15, y = 102<br>x = 0.2, y = 96<br>x = 0.25, y = 90<br>x = 0.3, y = 84<br>x = 0.35, y = 78<br>x = 0.4, y = 72<br>x = 0.45, y = 66<br>x = 0.5, y = 60<br>x = 0.55, y = 54<br>x = 0.6, y = 48<br>x = 0.65, y = 42<br>x = 0.7, y = 36<br>x = 0.75, y = 30<br>x = 0.8, y = 24<br>x = 0.85, y = 18<br>x = 0.9, y = 12<br>x = 0.95, y = 6<br>x = 0.99, y = 1<br>x = 1.0, y = 0<br>x = 2.0, y = 0<br></div></td></tr></tbody></table>
+</body> </html>

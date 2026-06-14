@@ -9,7 +9,7 @@
   <canvas id="chart_armor_resistancesinversehealth"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 0, "y": 35}, {"x": 0.1, "y": 35}, {"x": 0.2, "y": 32}, {"x": 0.3, "y": 28}, {"x": 0.4, "y": 24}, {"x": 0.5, "y": 20}, {"x": 0.6, "y": 16}, {"x": 0.61, "y": 0}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 0, "y": 35}, {"x": 0.1, "y": 35}, {"x": 0.2, "y": 32}, {"x": 0.3, "y": 28}, {"x": 0.4, "y": 24}, {"x": 0.5, "y": 20}, {"x": 0.6, "y": 16}, {"x": 0.61, "y": 0}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 0, "y": 35}, {"x": 0.1, "y": 35}, {"x": 0.2, "y": 32}, {"x": 0.3, "y": 28}, {"x": 0.4, "y": 24}, {"x": 0.5, "y": 20}, {"x": 0.6, "y": 16}, {"x": 0.61, "y": 0}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 0, "y": 35}, {"x": 0.1, "y": 35}, {"x": 0.2, "y": 32}, {"x": 0.3, "y": 28}, {"x": 0.4, "y": 24}, {"x": 0.5, "y": 20}, {"x": 0.6, "y": 16}, {"x": 0.61, "y": 0}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_armor_resistancesinversehealth').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

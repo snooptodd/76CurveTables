@@ -9,12 +9,12 @@
   <canvas id="chart_armor_lessdmgrobots"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 1, "y": 0.85}, {"x": 2, "y": 0.7225}, {"x": 3, "y": 0.6141}, {"x": 4, "y": 0.522}, {"x": 5, "y": 0.4437}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 1, "y": -15}, {"x": 100, "y": -15}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 0.85}, {"x": 2, "y": 0.7225}, {"x": 3, "y": 0.6141}, {"x": 4, "y": 0.522}, {"x": 5, "y": 0.4437}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 1, "y": 0.85}, {"x": 2, "y": 0.7225}, {"x": 3, "y": 0.6141}, {"x": 4, "y": 0.522}, {"x": 5, "y": 0.4437}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_armor_lessdmgrobots').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
 <table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
 <tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 0.85<br>x = 2, y = 0.7225<br>x = 3, y = 0.6141<br>x = 4, y = 0.522<br>x = 5, y = 0.4437<br></div></td></tr>
-<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = -15<br>x = 100, y = -15<br></div></td></tr></tbody></table>
+<tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = 0.85<br>x = 2, y = 0.7225<br>x = 3, y = 0.6141<br>x = 4, y = 0.522<br>x = 5, y = 0.4437<br></div></td></tr></tbody></table>
 </body> </html>

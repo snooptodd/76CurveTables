@@ -11,7 +11,7 @@
 
 ## todo
 # add commandline interface
-# convert from matplotlib to chartjs
+# convert from matplotlib to chartjs ##done##
 
 import os
 import pathlib
@@ -21,8 +21,8 @@ import filecmp
 
 DEBUG=False
 ROOT_DIR='./json'
-LIVE_DIR='/Live_P65.0'
-PTS_DIR='/PTS_P66.03_30Jan'
+LIVE_DIR='/Live_P68.01'
+PTS_DIR='/PTS_P70.00'
 COMMON_DIR='/misc/curvetables'
 SEARCH_NAME='*.json'
 OUTPUT_DIR='./graphs'

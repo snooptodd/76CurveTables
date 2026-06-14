@@ -9,7 +9,7 @@
   <canvas id="chart_health_e09b_fogcrawler"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P66.03_30Jan json", "data": [{"x": 27, "y": 1638}, {"x": 39, "y": 2646}, {"x": 51, "y": 3969}, {"x": 63, "y": 4473}, {"x": 75, "y": 4977}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P65.0 json", "data": [{"x": 27, "y": 1638}, {"x": 39, "y": 2646}, {"x": 51, "y": 3969}, {"x": 63, "y": 4473}, {"x": 75, "y": 4977}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 27, "y": 1638}, {"x": 39, "y": 2646}, {"x": 51, "y": 3969}, {"x": 63, "y": 4473}, {"x": 75, "y": 4977}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 27, "y": 1638}, {"x": 39, "y": 2646}, {"x": 51, "y": 3969}, {"x": 63, "y": 4473}, {"x": 75, "y": 4977}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_health_e09b_fogcrawler').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>

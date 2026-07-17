@@ -9,12 +9,12 @@
   <canvas id="chart_lonewandererdrbonus"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.05 json", "data": [{"x": 1, "y": 0.99}, {"x": 15, "y": 0.9}, {"x": 30, "y": 0.86}, {"x": 60, "y": 0.83}, {"x": 100, "y": 0.8}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 1, "y": 10}, {"x": 15, "y": 75}, {"x": 30, "y": 125}, {"x": 60, "y": 175}, {"x": 100, "y": 210}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_lonewandererdrbonus').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
 <p>
 <table class=sub> <thead><th class="sub">    </th><th class="sub">jsonalt</th><th class="sub">json</th></thead>
-<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 10<br>x = 15, y = 75<br>x = 30, y = 125<br>x = 60, y = 175<br>x = 100, y = 210<br></div></td></tr>
+<tbody><tr><td class="sub">PTS</td><td class="sub ptsjsonalt"></td><td class="sub ptsjson"><label for="ptsjson"></label> <div class="box" id="ptsjson">x = 1, y = 0.99<br>x = 15, y = 0.9<br>x = 30, y = 0.86<br>x = 60, y = 0.83<br>x = 100, y = 0.8<br></div></td></tr>
 <tr><td class="sub">Live</td><td class="sub livejsonalt"></td><td class="sub livejson"><label for="Livejson"></label> <div class="box" id="Livejson">x = 1, y = 10<br>x = 15, y = 75<br>x = 30, y = 125<br>x = 60, y = 175<br>x = 100, y = 210<br></div></td></tr></tbody></table>
 </body> </html>

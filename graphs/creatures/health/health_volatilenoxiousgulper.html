@@ -9,7 +9,7 @@
   <canvas id="chart_health_volatilenoxiousgulper"></canvas>
 </div>
 <script>
-const datasets = [{"label": "PTS_P70.00 json", "data": [{"x": 24, "y": 190}, {"x": 34, "y": 300}, {"x": 46, "y": 550}, {"x": 58, "y": 950}, {"x": 70, "y": 1250}, {"x": 85, "y": 1600}, {"x": 100, "y": 1950}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 24, "y": 190}, {"x": 34, "y": 300}, {"x": 46, "y": 550}, {"x": 58, "y": 950}, {"x": 70, "y": 1250}, {"x": 85, "y": 1600}, {"x": 100, "y": 1950}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
+const datasets = [{"label": "PTS_P70.05 json", "data": [{"x": 24, "y": 190}, {"x": 34, "y": 300}, {"x": 46, "y": 550}, {"x": 58, "y": 950}, {"x": 70, "y": 1250}, {"x": 85, "y": 1600}, {"x": 100, "y": 1950}], "borderColor": "#ff7f0e", "backgroundColor": "#ff7f0e", "tension": 0.0, "pointRadius": 3}, {"label": "Live_P68.01 json", "data": [{"x": 24, "y": 190}, {"x": 34, "y": 300}, {"x": 46, "y": 550}, {"x": 58, "y": 950}, {"x": 70, "y": 1250}, {"x": 85, "y": 1600}, {"x": 100, "y": 1950}], "borderColor": "#d62728", "backgroundColor": "#d62728", "tension": 0.0, "pointRadius": 3}];
 const ctx = document.getElementById('chart_health_volatilenoxiousgulper').getContext('2d');
 new Chart(ctx, { type: 'line', data: { datasets: datasets }, options: { plugins: { legend: { display: true } }, scales: { x: { type: 'linear', position: 'bottom', title: { display: true, text: 'X' } }, y: { title: { display: true, text: 'Y' } } } } });
 </script>
